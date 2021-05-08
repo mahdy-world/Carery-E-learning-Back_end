@@ -1,0 +1,6 @@
+db.sqlite3
+*.pyc
+.idea/
+*.sqlite3
+uploads/
+.DS_Store
