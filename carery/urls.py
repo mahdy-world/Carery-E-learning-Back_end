@@ -16,11 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    # Applications
     path('auth/', include('django.contrib.auth.urls')),
-    
+    path('contact_us/', include('Contact_Us.urls', namespace ='contact')),
+    path('student/', include('Student.urls', namespace ='students')),
+    path('book/', include('Book.urls', namespace ='books')),
+    path('team/', include('team.urls', namespace ='team')),
+    path('trainer/', include('Trainer.urls', namespace ='trainer')),
 
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
