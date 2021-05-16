@@ -25,11 +25,9 @@ urlpatterns = [
     path('auth/', include('django.contrib.auth.urls')),
     path('contact_us/', include('Contact_Us.urls', namespace ='contact')),
     path('student/', include('Student.urls', namespace ='students')),
+    path('core/', include('Core.urls', namespace ='cors')),
     path('book/', include('Book.urls', namespace ='books')),
     path('team/', include('team.urls', namespace ='team')),
     path('trainer/', include('Trainer.urls', namespace ='trainer')),
 
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
-    urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
