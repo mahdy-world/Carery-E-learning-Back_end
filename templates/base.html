@@ -22,7 +22,8 @@
     
 
     <!-- Template Main CSS File -->
-    <link href="{% static 'css/style.css'%}" rel="stylesheet"></style> 
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+  </style> 
 
   </head>
 
@@ -39,7 +40,7 @@
       <div class="container d-flex align-items-center">
   
         <h1 class="logo mr-auto"><a href="index.html">
-          <img src="img/192.png">
+          <img src="{% static 'img/192.png'%}">
         </a></h1>
         
         <!--nav menu-->
@@ -113,7 +114,7 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h1 class="logo mr-auto">
               <a href="index.html">
-                <img src="img/192.png" alt="logo" width="134.5" height="40px">
+                <img src="{% static 'img/192.png' %}" alt="logo" width="134.5" height="40px">
               </a>
             </h1>
             <p>
