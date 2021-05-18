@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 {%load static%}
-
 {% block body %}
-    
-
-    
+ 
 <main id="main" >
     <!-- ======= Breadcrumbs ======= -->
     
-    <div class="breadcrumbs_courses" data-aos="fade-in" style="background-image: url(../../static/img/books-header.jpg); ">
+    <div class="breadcrumbs_courses" data-aos="fade-in" style="background-image: url(../../static/img/books-header.jpg);">
         <div class="head_courses">
           <h2 style="font-size: 50px; margin-top: 50px;"> {{details.name}}</h2>
           <p></p>
@@ -33,7 +30,7 @@
               <li class="breadcrumb-item"><a href="index.html" style="color: rgb(255, 255, 255);">الرئيسية</a></li>
               <li class="breadcrumb-item"><a href="courses.html" style="color: rgb(255, 255, 255);">التعليم المستمر</a></li>
               <li class="breadcrumb-item"><a href="programming.html" style="color: rgb(255, 255, 255);">الكتب</a></li>
-              <li class="breadcrumb-item active" aria-current="page" style="color: rgb(94, 94, 94);">مدخل الي الذكاء الاصطناعي </li>
+              <li class="breadcrumb-item active" aria-current="page" style="color: rgb(94, 94, 94);">{{details.name}} </li>
               
               
             </ol>
@@ -126,7 +123,7 @@
             <div class="course-info d-flex justify-content-between align-items-center wedgit">
               <h6> <i class="fas fa-hdd"></i></i> حجم الملف</h6>
               <p>
-                MB {{ details.file.size|sizify }}    
+                MB     
             
           </p>
             </div>

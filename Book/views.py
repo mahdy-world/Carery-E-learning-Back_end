@@ -15,9 +15,9 @@ def book_list(request):
     }
     return render(request , 'book.html',context)
 # Book Details 
-def book_details (request,id):
+def book_details (request,pk):
     
-    book = Book.objects.get(id=id)
+    book = Book.objects.get(id=pk)
     context = {
         'details':book
     }
