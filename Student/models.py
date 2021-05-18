@@ -22,7 +22,7 @@ class Student(models.Model):
 
 
 class City (models.Model):
-    
+
     name= models.CharField(max_length = 10)
 
 class Govenorate (models.Model):
