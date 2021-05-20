@@ -25,8 +25,8 @@ urlpatterns = [
     path('auth/', include('django.contrib.auth.urls')),
     path('contact_us/', include('Contact_Us.urls', namespace ='contact')),
     # path('student/', include('Student.urls', namespace ='students')),
-    path('book/', include('Book.urls', namespace ='books')),
-    path('team/', include('team.urls', namespace ='team')),
+    path('Books/', include('Book.urls', namespace ='Books')),
+    path('Teams/', include('team.urls', namespace ='Teams')),
     path('Trainers/', include('Trainer.urls', namespace ='Trainers')),
 
 ]

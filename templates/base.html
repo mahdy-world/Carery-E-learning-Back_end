@@ -61,7 +61,7 @@
                     <li><a href="security.html">امن معلومات</a></li>
                   </ul>
                 </li>
-                <li class="drop-down"><a href="books.html">الكتب</a>
+                <li class="drop-down"><a href="{% url 'Books:BookList' %}">الكتب</a>
                   <ul>
                     <li><a href="programming.html">البرمجة</a></li>
                     <li><a href="design.html">التصميم</a></li>
@@ -77,7 +77,7 @@
               </ul>
             </li>
             <li><a href="{% url 'Trainers:AllTrainer' %}">المدربون</a></li>
-            <li><a href="teams.html">الفريق</a></li>
+            <li><a href="{% url 'Teams:Team' %}">الفريق</a></li>
             <li><a href="about.html">من نحن</a></li>
             <li><a href="#">تواصل معنا</a></li>
             <li></li>
