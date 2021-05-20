@@ -5,7 +5,7 @@
     
 <main id="main" >
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs_courses" data-aos="fade-in" style="background-image: url(../../static/img/books-header.jpg);">
+    <div class="breadcrumbs_courses" data-aos="fade-in" style="background-image: url(/static/img/books-header.jpg);">
       <div class="head_courses">
         <h2 style="font-size: 50px; margin-top: 50px;"> الكتب</h2>
         <p></p>
@@ -97,9 +97,8 @@
         <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
             
           <!--book item-->
-         
+          {% for alls in all %}
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-             {% for alls in all %}
             <div class="course-item wedgit">
               <img src="{{alls.img.url}}" class="img-fluid" style="width: 100%; height: 200px;" alt="...">
               <div class="course-content">
@@ -107,7 +106,7 @@
                
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4>البرمجة</h4>
+                    <h4>{{alls.category}}</h4>
                   </div>
 
                   <ul class="list-inline small">
