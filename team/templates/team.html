@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+<main id="main" >
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in" style="background-image: url(../../static/img/3.png);" >
+      <div class="container">
+        
+        <h2 style="font-size: 50px; margin-top: 50px;">الفريق</h2>
+        <p></p>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div id="image" class="col-md-6">
+            <img src="../../static/img/3.jpg" >
+          </div>
+
+          <div id="image"class="col-md-6">
+            
+
+            <h3 class="wedgit" >
+              قصتنا</h3>
+             <p>
+               بَدَأَ مشوارنا في عام ٢٠١٤ بِرُؤية من جلالة الملكة رانيا العبدالله لإحْداث نَقلة نَوعية في آلية توصيل المَعرِفة والوصول اليها بِهَدَف وَضع العالم العربي في مُقدمة مَصادر التّعَلُّم والبحث في مُختلف المجالات العلمية وذلك من خلال تَجسير الفُجوة بين مُخرَجات التعليم واحتياجات سوق العمل عن طريق بناء مُحتوى عِلمي، عَمَلي، ذَكي وناطِق باللّغة العربية لِيَتَمَكّنْ المُتعلمين من الحصول على فُرَص حقيقية ترتقي بِهِم وبِمُجتمعاتِهِم.
+كانت تلك نقطة البداية والإنطلاق، لِنُصبح خلال هذه الرحلة عائلة واحدة يَجْمَعُها حُب العلم والعطاء ويُوَحدها شعار"العلم لمن يريد“.
+نشكُر لكم دَعمَكم لمسيرتنا ولمشارَكَتنا أَحلامكم وطموحاتكم. نتمنى لَكُم رحلة تعليمية ممتعة مع مِنَصّة إِدْراك!
+             </p>
+          </div>
+        </div>
+
+
+       
+
+          <section id="team" class="team">
+            <div class="container" data-aos="fade-up">
+      
+              
+              <div class="section-title">
+                <h2>الفريق</h2>
+                <p>فريق عمل كاريري
+                </p>
+              </div>
+                
+                </br>
+      
+              <div class="row">
+                {% for teams in team %}
+                  
+                
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="100">
+                      <div class="member-img">
+                        <img src="{{teams.image.url}}" class="img-fluid " width="600px" height="600px">
+                        <div class="social">
+                          <a href="{{teams.twitter}}" target="_blank"><i class="icofont-twitter" ></i></a>
+                          <a href="{{teams.facebook}}" target="_blank"><i class="icofont-facebook"></i></a>
+                          <a href="{{teams.instagram}}" target="_blank"><i class="icofont-instagram"></i></a>
+                          <a href="{{teams.linked_in}}" target="_blank"><i class="icofont-linkedin"></i></a>
+                        </div>
+                      </div>
+                      <div class="member-info">
+                        <h4> {{teams.name}}</h4>
+                        <span>{{teams.job}}</span>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+      
+              </div>
+      
+            </div>
+          </section><!-- End Team Section -->
+      
+
+             
+
+
+
+          
+
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    
+    
+  </main><!-- End #main -->
+  
+{% endblock body %}

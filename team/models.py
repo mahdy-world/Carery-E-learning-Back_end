@@ -1,32 +1,16 @@
 from django.db import models
 
 
-# Choices 
-JOBS = {
-    ('',''),
-    ('',''),
-    ('',''),
-    ('',''),
-    ('',''),
-
-}
-
-GENDER = {
-    ('ذكر','ذكر'),
-    ('انثي','انثي'),
-}
-
 
 # Create your models here.
 class Team(models.Model):
-    name = models.CharField(max_length=30)
-    user_name = models.CharField(max_length=30)
-    password = models.CharField(max_length = 20)
-    date_of_birth = models.DateField()
-    image = models.ImageField()
-    facebook = models.CharField(max_length = 240)
-    instagram = models.CharField(max_length = 240)
-    twitter = models.CharField(max_length = 240)
-    linked_in = models.CharField(max_length = 240)
-    gender = models.CharField(max_length=40, choices=GENDER , verbose_name="النوع")
-    job = models.CharField(max_length=40, choices=JOBS)
+    name = models.CharField(max_length=30 ,verbose_name="الاسم")
+    job = models.CharField(max_length=40, verbose_name="الوظيفة")
+    image = models.ImageField(upload_to='team/')
+    facebook = models.CharField(max_length = 240 , verbose_name="عنوان الفيس بوك")
+    instagram = models.CharField(max_length = 240, verbose_name="عنوان الانستجرام")
+    twitter = models.CharField(max_length = 240, verbose_name="عنوان التويتر")
+    linked_in = models.CharField(max_length = 240, verbose_name="عنوان لينكد ان")
+    
+    def __str__(self):
+        return self.name
