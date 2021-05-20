@@ -27,7 +27,7 @@ urlpatterns = [
     # path('student/', include('Student.urls', namespace ='students')),
     path('book/', include('Book.urls', namespace ='books')),
     path('team/', include('team.urls', namespace ='team')),
-    path('trainer/', include('Trainer.urls', namespace ='trainer')),
+    path('Trainers/', include('Trainer.urls', namespace ='Trainers')),
 
 ]
 if settings.DEBUG:
