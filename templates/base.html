@@ -78,7 +78,7 @@
             </li>
             <li><a href="{% url 'Trainers:AllTrainer' %}">المدربون</a></li>
             <li><a href="{% url 'Teams:Team' %}">الفريق</a></li>
-            <li><a href="about.html">من نحن</a></li>
+            <li><a href="{% url 'Teams:About' %}">من نحن</a></li>
             <li><a href="#">تواصل معنا</a></li>
             <li></li>
             
@@ -131,8 +131,8 @@
             <h4>روابط مهمة</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">الرئيسية</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">عن كاريري</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">الفريق</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'Teams:About' %}">عن كاريري</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'Teams:Team' %}">الفريق</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">مركز المساعدة</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">كيف تتعلم مع كاريري</a></li>
             </ul>
