@@ -21,7 +21,7 @@ class Student(models.Model):
     name = models.CharField( max_length=50 ,verbose_name = 'اسم الطالب' )
     country = models.ForeignKey(Country, related_name="user_country", on_delete=models.CASCADE ,null=True , verbose_name = 'البلد')
     gender = models.CharField(max_length=40, choices=GENDER , verbose_name="النوع")
-    phone = models.CharField( max_length=50, null=True , blank=True , verbose_name="رقم الهاتف")
+    phone = models.CharField( max_length=50, null=True  , verbose_name="رقم الهاتف")
     image = models.ImageField( upload_to='profile/', verbose_name = 'الصورة الشخصية')
     
     

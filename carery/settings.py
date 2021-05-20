@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'Auth',
     'team',
     'Trainer',
-    
     'Contact_Us',
     'Book',
 ]
