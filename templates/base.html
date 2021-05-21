@@ -22,7 +22,8 @@
     
 
     <!-- Template Main CSS File -->
-    <link href="{% static 'css/style.css'%}" rel="stylesheet"></style> 
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+  </style> 
 
   </head>
 
@@ -39,7 +40,7 @@
       <div class="container d-flex align-items-center">
   
         <h1 class="logo mr-auto"><a href="index.html">
-          <img src="img/192.png">
+          <img src="{% static 'img/192.png'%}">
         </a></h1>
         
         <!--nav menu-->
@@ -60,7 +61,7 @@
                     <li><a href="security.html">امن معلومات</a></li>
                   </ul>
                 </li>
-                <li class="drop-down"><a href="books.html">الكتب</a>
+                <li class="drop-down"><a href="{% url 'Books:BookList' %}">الكتب</a>
                   <ul>
                     <li><a href="programming.html">البرمجة</a></li>
                     <li><a href="design.html">التصميم</a></li>
@@ -75,9 +76,9 @@
                 
               </ul>
             </li>
-            <li><a href="trainers.html">المدربون</a></li>
-            <li><a href="teams.html">الفريق</a></li>
-            <li><a href="about.html">من نحن</a></li>
+            <li><a href="{% url 'Trainers:AllTrainer' %}">المدربون</a></li>
+            <li><a href="{% url 'Teams:Team' %}">الفريق</a></li>
+            <li><a href="{% url 'Teams:About' %}">من نحن</a></li>
             <li><a href="#">تواصل معنا</a></li>
             <li></li>
             
@@ -113,7 +114,7 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h1 class="logo mr-auto">
               <a href="index.html">
-                <img src="img/192.png" alt="logo" width="134.5" height="40px">
+                <img src="{% static 'img/192.png' %}" alt="logo" width="134.5" height="40px">
               </a>
             </h1>
             <p>
@@ -130,8 +131,8 @@
             <h4>روابط مهمة</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">الرئيسية</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">عن كاريري</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">الفريق</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'Teams:About' %}">عن كاريري</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'Teams:Team' %}">الفريق</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">مركز المساعدة</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">كيف تتعلم مع كاريري</a></li>
             </ul>
