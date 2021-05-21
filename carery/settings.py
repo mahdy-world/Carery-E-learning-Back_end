@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'Book',
 ]
 
+LOGIN_REDIRECT_URL = '/Auth/home'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

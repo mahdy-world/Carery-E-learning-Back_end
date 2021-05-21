@@ -20,9 +20,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     # Applications
-    path('auth/', include('django.contrib.auth.urls')),
+    path('Auth/', include('Auth.urls' , namespace='Auth')),
     path('contact_us/', include('Contact_Us.urls', namespace ='contact')),
 <<<<<<< HEAD
     path('student/', include('Student.urls', namespace ='students')),
