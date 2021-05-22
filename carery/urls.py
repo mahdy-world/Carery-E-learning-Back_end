@@ -24,9 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Applications
     path('Auth/', include('Auth.urls' , namespace='Auth')),
-    path('contact_us/', include('Contact_Us.urls', namespace ='contact')),
-
-
+    path('Contact/', include('Contact_Us.urls', namespace ='Contact')),
     # path('student/', include('Student.urls', namespace ='students')),
     path('Books/', include('Book.urls', namespace ='Books')),
     path('Teams/', include('team.urls', namespace ='Teams')),

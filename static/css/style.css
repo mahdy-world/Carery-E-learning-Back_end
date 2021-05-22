@@ -888,7 +888,7 @@ margin-right: 45%;
 
 .contact .info i {
   font-size: 20px;
-  color: #5fcf80;
+  color: #1d6bb4;
   float: left;
   width: 44px;
   height: 44px;
@@ -920,7 +920,7 @@ margin-right: 45%;
 }
 
 .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
-  background: #5fcf80;
+  background: #0f3f8b;
   color: #fff;
 }
 
@@ -957,7 +957,7 @@ margin-right: 45%;
 .contact .php-email-form .sent-message {
   display: none;
   color: #fff;
-  background: #18d26e;
+  background: #02074d;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -990,7 +990,7 @@ margin-right: 45%;
 }
 
 .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
-  border-color: #5fcf80;
+  border-color: #061649;
 }
 
 .contact .php-email-form input {
@@ -1002,16 +1002,16 @@ margin-right: 45%;
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #5fcf80;
+  background: #06205c;
   border: 0;
   padding: 10px 35px;
   color: #fff;
   transition: 0.4s;
-  border-radius: 50px;
+  
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #3ac162;
+  background: #3a4ec1;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1360,7 +1360,7 @@ margin-right: 45%;
 }
 
 .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
-  background: #5fcf80;
+  background: #05246b;
   color: #fff;
 }
 
@@ -1442,7 +1442,7 @@ margin-right: 45%;
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #5fcf80;
+  background: #05194e;
   border: 0;
   padding: 10px 35px;
   color: #fff;
