@@ -26,22 +26,22 @@
       
       <div class="row" data-aos="zoom-in" data-aos-delay="100">
         {% for x in all  %}
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-          <div class="member">
-            <img src="{{x.image.url}}" class="img-fluid" alt="" width="600px" height="600px">
-            <div class="member-content">
-              <h4> {{x.name}}</h4>
-              <span>{{x.job}}</span>
-              
-              <div class="social">
-                <a href="{{x.twitter}}" target="_blank"><i class="icofont-twitter"></i></a>
-                <a href="{{x.facebook}}" target="_blank"><i class="icofont-facebook"></i></a>
-                <a href="{{x.instagram}}" target="_blank"><i class="icofont-instagram"></i></a>
-                <a href="{{x.linked_in}}" target="_blank"><i class="icofont-linkedin"></i></a>
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="{{x.image.url}}"  style="width: 253px; height:253px" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4> {{x.name}}</h4>
+                <span>{{x.job}}</span>
+                
+                <div class="social">
+                  <a href="{{x.twitter}}" target="_blank"><i class="icofont-twitter"></i></a>
+                  <a href="{{x.facebook}}" target="_blank"><i class="icofont-facebook"></i></a>
+                  <a href="{{x.instagram}}" target="_blank"><i class="icofont-instagram"></i></a>
+                  <a href="{{x.linked_in}}" target="_blank"><i class="icofont-linkedin"></i></a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
         {% endfor %}
         
       </div>

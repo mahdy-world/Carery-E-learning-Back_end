@@ -5,3 +5,5 @@ __pycache__/
 *.sqlite3
 uploads/
 .DS_Store
+
+__pycache__/

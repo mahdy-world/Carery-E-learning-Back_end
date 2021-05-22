@@ -4,5 +4,6 @@ app_name = 'Auth'
 
 urlpatterns=[
     path ('home', views.home, name = 'Home'),
+    path('profile' , views.profile , name = 'Profile')
 
 ]
