@@ -1,7 +1,9 @@
+{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>تسجيل الدخول</title>
+    <title> انشاء حساب جديد</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
@@ -80,52 +82,61 @@
     ">
             
             <div class="login100-pic js-tilt" data-tilt>
-                <img src="{% static 'Login/images/image1.jpg' %}" alt="IMG" style="margin-top: 35%;">
+                <img src="{% static 'Login/images/image2.jpg' %}" alt="IMG" style="margin-top: 35%;">
             </div>
 
-            <form class="login100-form validate-form" method="post" style="margin-top: 10%;">
+            <form class="login100-form validate-form" method="post">
                 {% csrf_token %}
-					<span class="login100-form-title">
-						تسجيل الدخول
-					</span>
-
-                <div class="wrap-input100 validate-input" data-validate="اسم المستخدم غير صالح">
-                    <h6 style="margin-bottom: 10px;">البريد الالكتروني</h6>
-                    <input class="input100" name="username" placeholder="اسم المستخدم" required="required">
+					
+                <span class="login100-form-title">
+                    انشاء حساب
+                </span>
+                
+                <div class="wrap-input100 validate-input" ">
+                    
+                    {{form.username|as_crispy_field }}
                     <span class="focus-input100"></span>
                    
                 </div>
 
-                <div class="wrap-input100 validate-input" data-validate="برجاء إدخال كلمة المرور">
-                    <h6 style="margin-bottom: 10px;">كلمة المرور</h6>
-                    <input class="input100" name="password" placeholder="كلمة المرور" type="password"
-                           required="required">
-                    <span class="focus-input100"></span>
+                <div class="wrap-input100 validate-input" ">
                     
+                    {{form.email|as_crispy_field }}
+                    <span class="focus-input100"></span>
+                   
+                </div>
+                <div class="wrap-input100 validate-input" >
+                    
+                    {{form.password1|as_crispy_field }}
+                    <span class="focus-input100"></span>
+                   
                 </div>
 
+                <div class="wrap-input100 validate-input" >
+                    
+                    {{form.password2|as_crispy_field }}
+                    <span class="focus-input100"></span>
+                   
+                </div>
+
+                
+
+                
                 <div class="container-login100-form-btn">
                     <button class="login100-form-btn">
-                        دخول
+                        تسجيل
                     </button>
-                </div>
 
-                <div class="text-center p-t-12">
-                    <a class="txt2" href="">
-                        نسيت كلمة السر؟
-                    </a>
-                </div>
-
-                <div class="text-center p-t-136">
-                    <p>
-                    اذا كنت لا تمتلك حساب انشئ حساب مجانا<a class="txt2" href="{% url 'accounts:signup' %}"  style=" color:rgb(9, 56, 119);">
-                        
-                        تسجيل حساب جديد
-                        
-                    </a>
-                    </p>
+                        <p style="margin-top: 15px;">اذ كنت تمتلك حساب قم بتسجيل الدخول  <a class="txt2" href="{% url 'login'%}" style=" color:rgb(9, 56, 119);">
+                            تسجيل الدخول
+                            <i class="fa fa-long-arrow-left m-l-5" aria-hidden="true"></i>
+                        </a></p>
+                       
+                    
                     
                 </div>
+
+               
             </form>
         </div>
     </div>
