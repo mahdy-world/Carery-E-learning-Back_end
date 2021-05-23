@@ -44,7 +44,11 @@ INSTALLED_APPS = [
     'Trainer',
     'Contact_Us',
     'Book',
+    'bootstrap4',
+    'crispy_forms'
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = '/Auth/home'
 
