@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %} 
+
+{% block body %}
+    
+    
+
+    <main id="main" >
+      <!-- ======= Breadcrumbs ======= -->
+      <div class="breadcrumbs" data-aos="fade-in" style="background-image: url(/static/img/profile.png);" >
+        <div class="container">
+  
+          <h2 style="font-size: 50px; margin-top: 50px;"> تعديل الصفحةالشخصية </h2>
+          <p></p>
+        </div>
+      </div><!-- End Breadcrumbs -->
+      
+      <section>
+        
+        <div class="container" data-aos="fade-up"  >
+          
+        
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form userform %}
+            {% bootstrap_form studentform %}
+
+           {% buttons %}
+           <button type="submit" class="btn btn-info " >حفظ  </button>
+           {% endbuttons %}
+           
+          </form>
+          
+        </div>
+      </section>
+      
+      
+  
+  
+  
+  
+    </main><!-- End #main -->
+  
+  <!-- End #main -->
+  
+{% endblock body %}

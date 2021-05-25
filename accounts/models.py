@@ -17,12 +17,15 @@ class Country(models.Model):
         return self.name
 
 class Student(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE , verbose_name = 'المستخدم')
+    user = models.OneToOneField(User, on_delete=models.CASCADE , related_name="profile_user", verbose_name = 'المستخدم')
     name = models.CharField( max_length=50 ,verbose_name = 'اسم الطالب' )
-    country = models.ForeignKey(Country, related_name="user_country", on_delete=models.CASCADE ,null=True , verbose_name = 'البلد')
-    gender = models.CharField(max_length=40, choices=GENDER , verbose_name="النوع")
-    phone = models.CharField( max_length=50, null=True  , verbose_name="رقم الهاتف")
-    image = models.ImageField( upload_to='profile/', verbose_name = 'الصورة الشخصية')
+    country = models.ForeignKey(Country, related_name="user_country", on_delete=models.CASCADE , null=True , blank = True , verbose_name = 'البلد')
+    gender = models.CharField(max_length=40, choices=GENDER , verbose_name="النوع" , null=True , blank = True)
+    phone = models.CharField( max_length=50, verbose_name="رقم الهاتف")
+    image = models.ImageField( upload_to='profile/', verbose_name = 'الصورة الشخصية', null=True , blank = True )
+
+    def __str__(self):
+        return self.user.username
     
     
 
