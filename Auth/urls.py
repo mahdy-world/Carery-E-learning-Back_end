@@ -4,6 +4,7 @@ app_name = 'Auth'
 
 urlpatterns=[
     path ('home', views.home, name = 'Home'),
-    path('profile' , views.profile , name = 'Profile'),
+    path('student' , views.student , name = 'student'),
+    path('student_edit/', views.edit_student , name = 'student_edit')
     
 ]
