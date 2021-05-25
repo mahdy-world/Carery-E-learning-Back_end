@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
-from accounts.models import Student
+from accounts.models import *
 from accounts.forms import *
 from django.urls import reverse
 

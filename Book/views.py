@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 import os
 from django.conf import settings
 from django.http import HttpResponse
-from pikepdf import Pdf
+
 
 # Create your views here.
 
@@ -30,7 +30,7 @@ def book_details (request,pk):
     }
     return render(request , 'book_details.html',context)
 
-
+# Download Pdf
 def download (path):
     file_path = os.path.join(settings.MEDIA_ROOT,path)
     if os.path.exists(file_path):
@@ -41,18 +41,3 @@ def download (path):
              
     raise Http404
 
-def home(path):
-    file_path = os.path.join(settings.MEDIA_ROOT,path)
-    image_data = open(file_path, 'rd').read()
-    return HttpResponse(image_data, mimetype='application/pdf')
-
-
-
-def get_pdf_page_count(request,path):
-    file_path = os.path.join(settings.MEDIA_ROOT,path)
-    pdf_doc = Pdf.open(file_path)
-    pdf_page_count = len(pdf_doc)
-    context={
-        'count_pdf' : pdf_page_count
-    }
-    return render (request ,'book_details.html',context)
