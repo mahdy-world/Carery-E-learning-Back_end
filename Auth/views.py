@@ -10,15 +10,16 @@ from django.urls import reverse
 def home(request):
     return render(request, 'home.html')
 
+@login_required()
 def student(request):
     student = Student.objects.get(user=request.user)
-    print(student)
+    print(student.phone)
     return render(request , 'profile.html' , {'student' : student})  
 
-
+@login_required()
 def edit_student(request):
     student = Student.objects.get(user=request.user)
-
+    
     if request.method == 'POST':
         userform = UserForm(request.POST , instance=request.user)
         studentform = StudentForm(request.POST , request.FILES , instance=student)

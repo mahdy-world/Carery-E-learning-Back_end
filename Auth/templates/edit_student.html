@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load bootstrap4 %} 
+{% load crispy_forms_tags %}
 
 {% block body %}
     
@@ -24,7 +25,7 @@
           <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {% bootstrap_form userform %}
-            {% bootstrap_form studentform %}
+            {{studentform.phone|as_crispy_field}}
 
            {% buttons %}
            <button type="submit" class="btn btn-info " >حفظ  </button>
