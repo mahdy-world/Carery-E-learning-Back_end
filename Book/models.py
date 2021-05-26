@@ -24,4 +24,6 @@ class Book (models.Model):
     def __str__(self):
         return self.name
 
-    
+    def increment_numdownload(self):
+        self.count_of_download +=1
+        return self.count_of_download
