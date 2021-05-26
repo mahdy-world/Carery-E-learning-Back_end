@@ -13,7 +13,7 @@ def home(request):
 @login_required()
 def student(request):
     student = Student.objects.get(user=request.user)
-    print(student.phone)
+    
     return render(request , 'profile.html' , {'student' : student})  
 
 @login_required()

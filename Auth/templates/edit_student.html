@@ -25,7 +25,7 @@
           <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {% bootstrap_form userform %}
-            {{studentform.phone|as_crispy_field}}
+            {% bootstrap_form studentform %}
 
            {% buttons %}
            <button type="submit" class="btn btn-info " >حفظ  </button>
