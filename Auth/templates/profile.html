@@ -20,12 +20,9 @@
             <div class="col-md-4 mb-3">
               <div class="card">
                 <div class="card-body">
-                  <div class="d-flex flex-column align-items-center text-center">
-
-
-                    
+                  <div class="d-flex flex-column align-items-center text-center" style="padding:6px">
                     {% if student.image %}
-                    <img src="{{student.image.url}}" alt="Admin" class="rounded-circle" width="200px" height="200px">
+                    <img src="{{student.image.url}}" alt="Admin" class="rounded-circle" width="200px " height="200px">
                     {% else %}
                     <img src="{% static 'img/avatar7.png' %}" alt="Admin" class="rounded-circle" width="200px" height="200px">
                     {% endif %}
@@ -53,7 +50,7 @@
                     <div class="col-sm-3">
                       <h6 class="mb-0"> الاسم الاول</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="col-sm-9 text-secondary text-center">
                       {{student.user.first_name}} 
                     </div>
                   </div>
@@ -62,7 +59,7 @@
                     <div class="col-sm-3">
                       <h6 class="mb-0"> الاسم الاخير</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="col-sm-9 text-secondary text-center">
                       {{student.user.last_name}}
                     </div>
                   </div>
@@ -72,7 +69,7 @@
                     <div class="col-sm-3">
                       <h6 class="mb-0">البريد الالكتروني</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="col-sm-9 text-secondary text-center">
                       {{student.user.email}}
                     </div>
                   </div>
@@ -81,7 +78,7 @@
                     <div class="col-sm-3">
                       <h6 class="mb-0">الدولة </h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="col-sm-9 text-secondary text-center">
                       {{student.country}} 
                     </div>
                   </div>
@@ -90,7 +87,7 @@
                     <div class="col-sm-3">
                       <h6 class="mb-0">الجنس </h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="col-sm-9 text-secondary text-center">
                       {{student.gender}}
                     </div>
                   </div>
@@ -99,7 +96,7 @@
                     <div class="col-sm-3">
                       <h6 class="mb-0">رقم الهاتف</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
+                    <div class="col-sm-9 text-secondary text-center">
                       {{student.phone}}
                     </div>
                   </div>
@@ -107,7 +104,7 @@
                   
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info "  href="{% url 'Auth:student_edit' %}">تعديل  </a>
+                      <a class=" btn btn-info" style="width: 100%;"  href="{% url 'Auth:student_edit' %}">تعديل  </a>
                       
                     </div>
                   </div>
