@@ -6,7 +6,7 @@ from .models import *
 
 class SignupForm(UserCreationForm):
 
-    username = forms.EmailField(max_length=30 , label='اسم المستخدم ')
+    username = forms.CharField(max_length=30 , label='اسم المستخدم ')
     email = forms.EmailField(max_length=200, label = 'البريد الالكتروني')
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class':'input100'}) , label='كلمة المرور' , )
     password2 = forms.CharField(widget=forms.PasswordInput , label='تأكيد كلمة المرور')
