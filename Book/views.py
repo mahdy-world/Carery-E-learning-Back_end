@@ -5,6 +5,7 @@ from django.core.paginator import Paginator
 import os
 from django.conf import settings
 from django.http import HttpResponse
+from PyPDF2 import PdfFileReader
 
 
 # Create your views here.
@@ -16,19 +17,13 @@ def book_list(request):
     paginator = Paginator(all_books, 6)  # Show 4 contacts per page.
     page_number = request.GET.get('page')
     all_books = paginator.get_page(page_number)
-    context ={
-        'all' : all_books
-    }
-    return render(request , 'book.html',context)
+    return render(request , 'book.html',{'all' : all_books})
 # Book Details 
 def book_details (request,pk):
     
     book = Book.objects.get(id=pk)
     
-    context = {
-        'details':book,
-    }
-    return render(request , 'book_details.html',context)
+    return render(request , 'book_details.html',{'details':book})
 
 # Download Pdf
 def download (path):
@@ -37,7 +32,12 @@ def download (path):
         with open (file_path,'rb') as fh:
             response = HttpResponse(fh.read(), content_type="application/file")
             response['Content-Disposition']='inline;filename='+os.path.basename(file_path)
-            return response
-             
+            return response    
     raise Http404
 
+def count_pages(request,path):
+    pdf_document = os.path.join(settings.MEDIA_ROOT,path)
+    with open(pdf_document, "rb") as filehandle:
+        pdf = PdfFileReader(filehandle)
+        pages = pdf.getNumPages()
+        return render(request , 'book_details.html',{'pages':pages})
