@@ -23,7 +23,7 @@ class Student(models.Model):
     
     country = models.ForeignKey(Country, related_name="user_country", on_delete=models.CASCADE , null=True , blank = True , verbose_name = 'البلد')
     gender = models.CharField(max_length=40, choices=GENDER , verbose_name="النوع" )
-    
+    phone = models.CharField(max_length=20 , null=True , blank=True)
     image = models.ImageField( upload_to='profile/', verbose_name = 'الصورة الشخصية', null=True , blank = True )
 
     def __str__(self):

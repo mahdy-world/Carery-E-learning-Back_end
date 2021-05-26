@@ -33,6 +33,6 @@ def edit_student(request):
 
     else:
         userform = UserForm(instance=request.user)
-        studentform = StudentForm(instance=Student)
+        studentform = StudentForm(instance=student)
 
     return render(request , 'edit_student.html' ,{'userform' : userform , 'studentform' : studentform})
