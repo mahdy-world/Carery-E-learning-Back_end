@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Trainer',
     'Contact_Us',
     'Book',
+    'Courses',
     'bootstrap4',
     'crispy_forms',
     
