@@ -80,7 +80,23 @@
             <li><a href="{% url 'Teams:Team' %}">الفريق</a></li>
             <li><a href="{% url 'Teams:About' %}">من نحن</a></li>
             <li><a href="{% url 'Contact:home' %}">تواصل معنا</a></li>
-            <li></li>
+            
+            {% if user.is_authenticated  %}
+            <li id ="get_start1" style="color: white; margin-left:10px; "> <a style="color: white;font-size:12px padding-top" href="#"  class="btn-get-started"> لوحتي التعليمية</a></li>
+            
+            <li class="drop-down" ><a> </a>
+              <ul>
+                <li ><a class="btn-get-started"  href="{% url 'Auth:student' %}">الصفحة الشخصية</a></li>
+                <li>
+                  <a href="{% url 'logout'%}?next={{request.path}}" class="btn-get-started">تسجيل الخروج</a></li>
+              </ul>
+            </li>
+            {% else %}
+            <li id ="get_start1" style="color: white;"> <a style="color: white;" href="{% url 'accounts:signup'%}?next={{request.path}}"  class="btn-get-started">سجل مجانا</a></li>
+            <li id ="get_start2" ><a href="{% url 'login'%}?next={{request.path}}"  class="btn-get-started">دخول</a>
+             </li>
+             {% endif %}
+              
             
       
   
@@ -88,14 +104,8 @@
         </nav>
         
         
-        {% if user.is_authenticated %}
-            <a class="btn-get-started" id ="get_start1" href="{% url 'Auth:student' %}">{{ user.get_username }} </a>
-          <a href="{% url 'logout'%}?next={{request.path}}" class="btn-get-started" id ="get_start2">تسجيل الخروج</a>
-
-          {% else %}
-          <a href="{% url 'accounts:signup'%}?next={{request.path}}"  id ="get_start1" class="btn-get-started">سجل مجانا</a>
-          <a href="{% url 'login'%}?next={{request.path}}" id ="get_start2" class="btn-get-started">دخول</a>
-        {% endif %}
+        
+          
           
         
         
