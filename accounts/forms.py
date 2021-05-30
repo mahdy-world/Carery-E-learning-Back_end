@@ -28,4 +28,4 @@ class UserForm(forms.ModelForm):
 class StudentForm(forms.ModelForm):
     class Meta:
         model = Student 
-        fields= ['country','gender','image' , 'phone']         
+        fields= ['country','gender', 'phone' ,'image']         

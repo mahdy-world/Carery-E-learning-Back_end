@@ -80,10 +80,14 @@
             <li><a href="{% url 'Teams:Team' %}">الفريق</a></li>
             <li><a href="{% url 'Teams:About' %}">من نحن</a></li>
             <li><a href="{% url 'Contact:home' %}">تواصل معنا</a></li>
+
+            
             {% if user.is_authenticated  %}
             <li id ="get_start1" style="color: white; margin-left:10px; "> <a style="color: white;font-size:12px padding-top" href="#"  class="btn-get-started"> لوحتي التعليمية</a></li>
             
+
             <li class="drop-down" ><a>{{request.user.username}}</a>
+
               <ul>
                 <li ><a class="btn-get-started"  href="{% url 'Auth:student' %}">الصفحة الشخصية</a></li>
                 <li>
@@ -95,16 +99,13 @@
             <li id ="get_start2" ><a href="{% url 'login'%}?next={{request.path}}"  class="btn-get-started">دخول</a>
              </li>
              {% endif %}
-            
       
   
           </ul>
         </nav>
         
         
-       
-        
-  
+
       </div>
     </header>
     <!-- End Header -->
