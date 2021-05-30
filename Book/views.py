@@ -49,12 +49,12 @@ def download2(request, id):
         # print(response['Content-Disposition'])
         return response    
    
-def show_pdf(request,id):
-    target_book = Book.objects.get(id=id)
-    with open (target_book.file.path ,'rb') as fh:
-        response = HttpResponse(fh.read(),  mimetype='application/pdf')
-        response['Content-Disposition'] = 'inline;filename=some_file.pdf'
-        return response
+# def show_pdf(request,id):
+#     target_book = Book.objects.get(id=id)
+#     with open (target_book.file.path ,'rb') as fh:
+#         response = HttpResponse(fh.read(),  mimetype='application/pdf')
+#         response['Content-Disposition'] = 'inline;filename=some_file.pdf'
+#         return response
 
         
     # fsock = open(target_book.file.path, 'r')

@@ -1,14 +1,22 @@
+from Courses.models import Course
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from accounts.models import *
 from accounts.forms import *
 from django.urls import reverse
+from Book.models import Book
+from Trainer.models import Trainer
+
 
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    books=Book.objects.all()
+    trainer=Trainer.objects.all()
+    course=Course.objects.all()
+    
+    return render(request, 'home.html', {'books':books,'trainer':trainer,'co':course})
 
 @login_required()
 def student(request):
