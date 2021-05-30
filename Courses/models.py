@@ -7,7 +7,8 @@ from Trainer.models import Trainer
 
 class Course(models.Model):
     name = models.CharField(max_length=50, verbose_name = 'اسم الكورس' )
-    image = models.ImageField(upload_to='courses/', verbose_name='صورة الكورس')
+    image= models.ImageField(upload_to='courses/', verbose_name='صورة الكورس')
+    detail_image= models.ImageField(upload_to='courses/', verbose_name='صورة الوصف')
     price = models.CharField(max_length=10, verbose_name='السعر')
     duration = models.CharField( max_length=10 , verbose_name = 'مدة الكورس')
     count_lesson = models.CharField(max_length=100 , verbose_name='عدد الدروس')

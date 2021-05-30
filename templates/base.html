@@ -85,7 +85,8 @@
             {% if user.is_authenticated  %}
             <li id ="get_start1" style="color: white; margin-left:10px; "> <a style="color: white;font-size:12px padding-top" href="#"  class="btn-get-started"> لوحتي التعليمية</a></li>
             
-            <li class="drop-down" ><a> </a>
+
+            <li class="drop-down" ><a>{{request.user.username}}</a>
 
               <ul>
                 <li ><a class="btn-get-started"  href="{% url 'Auth:student' %}">الصفحة الشخصية</a></li>
