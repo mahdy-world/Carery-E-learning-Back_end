@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+{%load static%}
+{% block body %}
+ 
+<main id="main" >
+  <!-- ======= Breadcrumbs ======= -->
+  
+  <div class="breadcrumbs_courses" data-aos="fade-in" style="background-image: url({{co.detail_image.url}}); ">
+      <div class="head_courses">
+        <h2 style="font-size: 50px; margin-top: 50px;">{{co.name}}</h2>
+        <p></p>
+      </div>  
+      
+    
+    
+  </div>
+  <!-- End Breadcrumbs -->
+
+
+
+  <section id="course-details" class="course-details" data-aos="zoom-in">
+    
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+      
+        <nav aria-label="breadcrumb">
+        
+          <ol class="breadcrumb" style="background-color:#17a2b8;" >
+
+            
+            <li class="breadcrumb-item"><a href="index.html" style="color: rgb(255, 255, 255);">الرئيسية</a></li>
+            <li class="breadcrumb-item"><a href="courses.html" style="color: rgb(255, 255, 255);">المسارت التعليمة</a></li>
+            <li class="breadcrumb-item"><a href="programming.html" style="color: rgb(255, 255, 255);">{{co.category}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: rgb(17, 17, 17);">{{co.name}}</li>
+            
+            
+          </ol>
+
+         
+          <div class="btn-group">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" >
+              <li class="fa fa-th-large"></li> التصنيفات
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="programming.html">البرمجة</a>
+              <a class="dropdown-item" href="design.html">التصميم</a>
+              <a class="dropdown-item" href="lang.html">اللغات</a>
+              <a class="dropdown-item" href="network.html">شبكات الحاسوب</a>
+              <a class="dropdown-item" href="development.html">تطوير الذات</a>
+              <a class="dropdown-item" href="system.html">انظمة التشغيل</a>
+              <a class="dropdown-item" href="database.html">قواعد بيانات</a>
+              <a class="dropdown-item" href="security.html">امن معلومات</a>
+            </div>
+          </div>
+          
+        </nav>
+
+      </br>
+      
+
+      
+        
+      
+      <!--course vedio-->
+      <div class="row">
+        <div class="col-lg-8">
+              <div class="embed-responsive embed-responsive-16by9 wedgit">
+                <iframe width="956" height="538" id="iframe" src="{{dv.first.url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              
+              </div>
+            </br>
+              <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" style="justify-content: center;">
+                      <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item"><a class="page-link" href="#"> <i class="fas fa-forward"></i> السابق </a> </li>
+                         
+                          <li class="page-item"><a class="page-link" href="#"> التالي <i class="fas fa-backward"></i></a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                </div>
+              </div>
+
+              <br>
+
+           <div class="row">
+                <div class=" col-lg-12">
+                  <div class="lessons-list">
+                      <h3><i class="fa fa-bars"></i> المحتويات</h3>
+                      <ul>
+                              {% for x in dv  %}
+                              <li>
+                                <a style="cursor:pointer"  onclick="document.getElementById('iframe').src='{{x.url}}'">
+                                    <div class="lesson-icon"><i class="fa fa-play-circle"></i></div>
+                                    <div class="lesson-title"> {{x.title}}</div>
+                                    <div class="lesson-duration">المدة
+                                        : 00:08:43</div>
+                                </a>
+                            </li>
+  
+                              {% endfor %}
+                          
+                               
+                                  
+        
+                                  
+                      </ul>
+                  </div>
+        
+                  
+        
+              </div>
+             </div>
+        </div>
+        <!-- end course vedio-->
+
+       
+        <!--information vedio-->
+        <div class="col-lg-4">
+
+          
+          <div class="course-info d-flex justify-content-between align-items-center wedgit" style="background-color:#17a2b8; color:rgb(2, 2, 2)" >
+            <h6><i class="fas fa-book"></i>  الكورس</h6>
+           <a href="#" style="color: rgb(48, 47, 47);" ><p>{{co.name}}</p></a>
+          </div>
+
+          
+
+          <div class="course-info d-flex justify-content-between align-items-center wedgit" style="background-color:#17a2b8; color:rgb(0, 0, 0)">
+            <h6> <i class="fas fa-clock"></i> مدة الدرس </h6>
+            <p> 00:08:43</p>
+          </div>
+
+          <div class="course-info d-flex justify-content-between align-items-center wedgit" style="background-color:#17a2b8; color:rgb(0, 0, 0)">
+            <h6> <i class="fa fa-eye"></i> المشاهدات</h6>
+            <p>
+              1,038    
+          
+        </p>
+          </div>
+            
+          <div class="card text-white bg-info mb-3 d-flex wedgit" >
+            <div class="card-header ">
+              <h5 style="display: inline-flex;"><i class="fa fa-star"></i> تقييم الكورس</h5>
+              <a href="#addRating" data-toggle="modal" style="display:inline-block; margin-right: 40px;" data-target="#ratingModal" class="btn btn-outline-warning"> <i class="fa fa-plus" ></i> أضف تقييم</a>
+            </div>
+            
+            <div class="card-body ">
+              <h5 class="card-title"><div class="rating-result"><h2>5</h2></div></h5>
+              <p class="card-text">
+                
+                <div class="rating-start rating-large">
+
+                <i class="fa fa-star" style="color:#F7CA18; font-size: 20px;" > </i>
+                <i class="fa fa-star" style="color:#F7CA18; font-size: 20px;"></i>
+                <i class="fa fa-star" style="color:#F7CA18; font-size: 20px;"></i>
+                <i class="fa fa-star" style="color:#F7CA18; font-size: 20px;"></i>
+                <i class="fa fa-star" style="color:#F7CA18; font-size: 20px;"></i>
+      
+                </div>
+                </p>
+
+                <div class="rating-user">
+                  <i class="fa fa-user"></i> 2 </div>
+            </div>
+            <div class="card-footer "><div class="view-all-rating"><a href="">عرض تقييمات الطلاب</a></div></div>
+          </div>
+
+          <div class="card text-white bg-info mb-3 d-flex wedgit " >
+            <div class="card-header "><h5><i class="fa fa-share"></i> شارك الكورس</h5></div>
+            <div class="card-body ">
+              <h5 class="card-title">
+                <div class="course-link-input">
+                  <input class="form-control" onclick="selectInput(this)" value="https://www.carary.org/c/307" readonly="">
+                </div>
+              </h5>
+              
+            </div>
+            <div class="card-footer ">
+              <div class="rating-start rating-large" style="padding-right:10px">
+
+                <i class="fab fa-facebook" style="font-size: 30px; " ></i>
+                <i class="fab fa-google-plus-g" style="font-size: 30px; margin-right: 10px;"></i>
+                <i class="fab fa-twitter" style="font-size: 30px; margin-right: 10px;"></i>
+                <i class="fab fa-whatsapp" style="font-size: 30px; margin-right: 10px;"></i>
+                <i class="fas fa-envelope" style="font-size: 30px; margin-right: 10px;"></i>
+      
+                </div>
+        </div>
+        
+        <div class="col-lg-4">
+          
+        </div>
+
+      </div>
+    
+
+        </div>
+        <!-- end information vedio-->
+
+   
+  </section>
+
+</main>
+<!-- End #main -->
+
+  
+{% endblock body %}
