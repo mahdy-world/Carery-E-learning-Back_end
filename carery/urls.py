@@ -31,6 +31,7 @@ urlpatterns = [
     path('Books/', include('Book.urls', namespace ='Books')),
     path('Teams/', include('team.urls', namespace ='Teams')),
     path('Trainers/', include('Trainer.urls', namespace ='Trainers')),
+    path('Courses/', include('Courses.urls', namespace ='Courses')),
 
 
 ]

@@ -22,7 +22,6 @@ def book_list(request):
 def book_details (request,pk):
     
     book = Book.objects.get(id=pk)
-    
     return render(request , 'book_details.html',{'details':book})
 
 # Download Pdf

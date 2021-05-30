@@ -1,0 +1,249 @@
+{% extends "base.html" %}
+{%load static%}
+{% block body %}
+ 
+<main id="main" >
+  <!-- ======= Breadcrumbs ======= -->
+  
+  <div class="breadcrumbs_courses" data-aos="fade-in" style="background-image: url(./img/course-details.jpg); ">
+      <div class="head_courses">
+        <h2 style="font-size: 50px; margin-top: 50px;"> تصميم مواقع</h2>
+        <p></p>
+      </div>
+      
+    
+    
+  </div>
+  <!-- End Breadcrumbs -->
+
+
+
+  <section id="course-details" class="course-details">
+    
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+      
+        <nav aria-label="breadcrumb">
+        
+          <ol class="breadcrumb" style="background-color:#17a2b8;" >
+
+            
+            <li class="breadcrumb-item"><a href="index.html" style="color: rgb(255, 255, 255);">الرئيسية</a></li>
+            <li class="breadcrumb-item"><a href="courses.html" style="color: rgb(255, 255, 255);">المسارت التعليمة</a></li>
+            <li class="breadcrumb-item"><a href="courses.html" style="color: rgb(255, 255, 255);">البرمجة</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: rgb(34, 34, 34);">تصميم المواقع</li>
+            
+            
+          </ol>
+
+         
+          <div class="btn-group">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" >
+              <li class="fa fa-th-large"></li> التصنيفات
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="programming.html">البرمجة</a>
+              <a class="dropdown-item" href="design.html">التصميم</a>
+              <a class="dropdown-item" href="lang.html">اللغات</a>
+              <a class="dropdown-item" href="network.html">شبكات الحاسوب</a>
+              <a class="dropdown-item" href="development.html">تطوير الذات</a>
+              <a class="dropdown-item" href="system.html">انظمة التشغيل</a>
+              <a class="dropdown-item" href="database.html">قواعد بيانات</a>
+              <a class="dropdown-item" href="security.html">امن معلومات</a>
+            </div>
+          </div>
+          
+        </nav>
+
+      </br>
+      
+
+      
+        
+      
+
+      <div class="row">
+        <div class="col-lg-8">
+          <img src="{{da.image.url}}" class="img-fluid wedgit" alt="">
+          <h3>الوصف</h3>
+          <p style="text-align: justify;">
+            {{da.description}}
+          </p>
+        </div>
+        <div class="col-lg-4">
+
+          <div class="course-info d-flex justify-content-between align-items-center wedgit">
+            <h6> <li class="fas fa-user"></li> المدرب</h6>
+            <p><a href="#">{{da.trainer}}</a></p>
+          </div>
+
+          <div class="course-info d-flex justify-content-between align-items-center wedgit">
+            <h6><i class="fas fa-dollar-sign"></i> سعر الكورس</h6>
+            <p>{{da.price}}</p>
+          </div>
+
+          <div class="course-info d-flex justify-content-between align-items-center wedgit">
+            <h6><i class="fas fa-map-marker"></i> عدد الطلاب</h6>
+            <p>30 طالب</p>
+          </div>
+
+          <div class="course-info d-flex justify-content-between align-items-center wedgit">
+            <h6> <i class="fas fa-clock"></i> الجهد المطلوب</h6>
+            <p>{{da.duration}} ساعة</p>
+          </div>
+
+          <div class="course-info d-flex justify-content-between align-items-center wedgit">
+            <h6> <i class="fas fa-sticky-note"></i> عدد الدروس</h6>
+            <p>{{da.count_lesson}} درس</p>
+          </div>
+
+          <div class="course-info d-flex justify-content-between align-items-center wedgit">
+            <h6> <i class="fas fa-star"></i> التقييم </h6>
+            <p>
+              <i class="fa fa-star" style="color:#F7CA18;"></i>
+              <i class="fa fa-star" style="color:#F7CA18;"></i>
+              <i class="fa fa-star" style="color:#F7CA18;"></i>
+              <i class="fa fa-star" style="color:#F7CA18;"></i>
+              <i class="fa fa-star" style="color:#F7CA18;"></i>      
+          
+            </p>
+
+       
+          </div>
+
+          
+          {% if user.is_authenticated %}
+          <a href="course_contante.html">
+            <button type="button" class="btn btn-info">انضم الأن</button>
+           </a> 
+
+          {% else %}
+            <a href="{% url 'login'%}">
+              <button type="button" class="btn btn-info">انضم الأن</button>
+            </a>
+          {% endif %}
+            
+          
+              
+
+            
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="cource-details-tabs" class="cource-details-tabs">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+      <h3 style="margin-bottom: 50px;"><i class="fas fa-bookmark" style="color: rgb(88, 88, 88);"></i> سوف تتعلم في هذا المسار</h3>
+    
+    
+
+      <div class="row">
+        <div class="col-lg-3">
+          
+          <ul class="nav nav-tabs flex-column">
+            <li class="nav-item">
+              
+              <a class="nav-link active show" data-toggle="tab" href="#tab-1">المفردات والمصطلحات الأساسية والعامة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#tab-2">تحديد وفهم المعنى العام</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#tab-3">تحليل و كتابة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#tab-4">المشاركة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#tab-5">عمل التصميم</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-9 mt-4 mt-lg-0">
+          <div class="tab-content">
+            <div class="tab-pane active show" id="tab-1">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>المفردات والمصطلحات الأساسية والعامة</h3>
+                  <p class="font-italic">المفردات والمصطلحات الأساسية والعامة التي تحتاجها للمشاركة والتواصل الفعال باللغة الإنجليزية على المستوى الاجتماعي والعملي.</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="img/Asset 11.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-2">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>تحديد وفهم المعنى العام</h3>
+                  <p class="font-italic">تحديد وفهم المعنى العام للنصوص البسيطة والمعقدة والتي تدور حول موضوعات تواكب احتياجات المتعلم للقرن الواحد والعشرون.</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="img/Asset 12.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-3">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>تحليل و كتابة</h3>
+                  <p class="font-italic">تحليل و كتابة نصوص بسيطة وعميقة حول مواضيع مألوفة</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="img/course-details-tab-3.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-4">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>المشاركة</h3>
+                  <p class="font-italic">المشاركة والتحدث عن موضوعات تواكب احتياجات واهتمامات المتعلم للقرن الواحد والعشرين.</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="img/course-details-tab-4.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-5">
+              <div class="row">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>عمل التصميم </h3>
+                  <p class="font-italic">عمل تصاميم تحاكي شغل الواقع مع بعض المشاريع الجاهزة.</p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="img/Asset 18.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="cource-details-tabs" class="cource-details-tabs">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+      <h3 style="margin-bottom: 50px;"><i class="fas fa-flag" style="color: rgb(88, 88, 88);"></i> برعاية</h3>
+    
+    
+
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="card bg-white text-white" style="border-style: unset;">
+            <img src="./img/google-logo.png" class="card-img" alt="...">
+            </div>
+            
+          </div>
+        </div>
+    </div>
+  </section>
+  
+</main>
+<!-- End #main -->
+
+  
+{% endblock body %}

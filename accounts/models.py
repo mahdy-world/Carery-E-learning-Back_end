@@ -20,7 +20,6 @@ class Country(models.Model):
 
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE , related_name="profile_user", verbose_name = 'المستخدم')
-    
     country = models.ForeignKey(Country, related_name="user_country", on_delete=models.CASCADE , null=True , blank = True , verbose_name = 'البلد')
     gender = models.CharField(max_length=40, choices=GENDER , verbose_name="النوع" )
     phone = models.CharField(max_length=20 , null=True , blank=True ,verbose_name='رقم المحمول')

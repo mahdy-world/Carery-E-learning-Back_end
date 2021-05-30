@@ -80,11 +80,18 @@
             <li><a href="{% url 'Teams:Team' %}">الفريق</a></li>
             <li><a href="{% url 'Teams:About' %}">من نحن</a></li>
             <li><a href="{% url 'Contact:home' %}">تواصل معنا</a></li>
+<<<<<<< HEAD
             
             {% if user.is_authenticated  %}
             <li id ="get_start1" style="color: white; margin-left:10px; "> <a style="color: white;font-size:12px padding-top" href="#"  class="btn-get-started"> لوحتي التعليمية</a></li>
             
             <li class="drop-down" ><a> </a>
+=======
+            {% if user.is_authenticated  %}
+            <li id ="get_start1" style="color: white; margin-left:10px; "> <a style="color: white;font-size:12px padding-top" href="#"  class="btn-get-started"> لوحتي التعليمية</a></li>
+            
+            <li class="drop-down" >
+>>>>>>> 1da70f66f5242097042c75f789e83e27c7097d6c
               <ul>
                 <li ><a class="btn-get-started"  href="{% url 'Auth:student' %}">الصفحة الشخصية</a></li>
                 <li>
@@ -96,7 +103,10 @@
             <li id ="get_start2" ><a href="{% url 'login'%}?next={{request.path}}"  class="btn-get-started">دخول</a>
              </li>
              {% endif %}
+<<<<<<< HEAD
               
+=======
+>>>>>>> 1da70f66f5242097042c75f789e83e27c7097d6c
             
       
   
@@ -104,10 +114,14 @@
         </nav>
         
         
+<<<<<<< HEAD
         
           
           
         
+=======
+       
+>>>>>>> 1da70f66f5242097042c75f789e83e27c7097d6c
         
   
       </div>
