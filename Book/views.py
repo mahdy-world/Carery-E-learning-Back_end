@@ -34,9 +34,9 @@ def download (path):
             return response    
     raise Http404
 
-def count_pages(request,path):
-    pdf_document = os.path.join(settings.MEDIA_ROOT,path)
-    with open(pdf_document, "rb") as filehandle:
-        pdf = PdfFileReader(filehandle)
-        pages = pdf.getNumPages()
-        return render(request , 'book_details.html',{'pages':pages})
+# def count_pages(request,path):
+#     pdf_document = os.path.join(settings.MEDIA_ROOT,path)
+#     with open(pdf_document, "rb") as filehandle:
+#         pdf = PdfFileReader(filehandle)
+#         pages = pdf.getNumPages()
+#         return render(request , 'book_details.html',{'pages':pages})
