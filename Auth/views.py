@@ -44,3 +44,8 @@ def edit_student(request):
         studentform = StudentForm(instance=student)
 
     return render(request , 'edit_student.html' ,{'userform' : userform , 'studentform' : studentform})
+
+@login_required()
+def my_dashboard(request):
+    
+    return render(request,'mydashboard.html')
