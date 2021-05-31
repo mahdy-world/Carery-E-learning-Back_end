@@ -14,10 +14,10 @@ from PyPDF2 import PdfFileReader
 def book_list(request):
     
     all_books= Book.objects.all()
-    paginator = Paginator(all_books, 6)  # Show 6 contacts per page.
+    paginator = Paginator(all_books, 8)  # Show 6 contacts per page.
     page_number = request.GET.get('page')
     all_books = paginator.get_page(page_number)
-    return render(request , 'book.html',{'all' : all_books})
+    return render(request , 'book/book.html',{'all' : all_books})
 # Book Details 
 def book_details (request,pk):
     book = Book.objects.get(id=pk)
@@ -25,7 +25,7 @@ def book_details (request,pk):
     with open(book.file.path , "rb") as filehandle:  # Get Count Of Pages PDF
         pdf = PdfFileReader(filehandle)
         pages = pdf.getNumPages()
-    return render(request , 'book_details.html',{'details':book, 'pages':pages})
+    return render(request , 'book/book_details.html',{'details':book, 'pages':pages})
 
 # # Download Pdf
 # def download (path):
@@ -59,4 +59,45 @@ def download2(request, id):
         
     # fsock = open(target_book.file.path, 'r')
     # response = HttpResponse(fsock, mimetype='application/pdf')
+    
+    
+def programming_list(request):
+    queryset = Book.objects.filter(category__id = 1)
+    return render(request , 'categorybook/programming.html' ,{'book' : queryset} )
+
+def lang_list(request):
+    queryset = Book.objects.filter(category__id = 2)
+    return render(request , 'categorybook/lang.html' ,{'book' : queryset} )
+
+def network_list(request):
+    queryset = Book.objects.filter(category__id = 3)
+    return render(request , 'categorybook/network.html' ,{'book' : queryset} )
+
+def database_list(request):
+    queryset = Book.objects.filter(category__id = 4)
+    return render(request , 'categorybook/database.html' ,{'book' : queryset} )
+
+def design_list(request):
+    queryset = Book.objects.filter(category__id = 5)
+    return render(request , 'categorybook/design.html' ,{'book' : queryset} )
+
+def development_list(request):
+    queryset = Book.objects.filter(category__id = 6)
+    return render(request , 'categorybook/development.html' ,{'book' : queryset} )
+
+def secuirty_list(request):
+    queryset = Book.objects.filter(category__id = 7)
+    return render(request , 'categorybook/secuirty.html' ,{'book' : queryset} )
+
+def system_list(request):
+    queryset = Book.objects.filter(category__id = 8)
+    return render(request , 'categorybook/system.html' ,{'book' : queryset} )
+
+
+
+
+
+
+
+
   

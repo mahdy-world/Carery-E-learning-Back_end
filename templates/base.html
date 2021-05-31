@@ -39,7 +39,7 @@
      
       <div class="container d-flex align-items-center">
   
-        <h1 class="logo mr-auto"><a href="index.html">
+        <h1 class="logo mr-auto"><a href="{% url 'Auth:Home'%}">
           <img src="{% static 'img/192.png'%}">
         </a></h1>
         
@@ -47,30 +47,30 @@
         <nav class="nav-menu d-none d-lg-block">
           <ul>
             <li class="active"><a href="{%url 'Auth:Home' %}">الرئيسية</a></li>
-            <li class="drop-down"><a href="">التعليم المستمر</a>
+            <li class="drop-down"><a href="{% url 'Courses:category_list'%}">التعليم المستمر</a>
               <ul>
-                <li class="drop-down"><a href="courses.html">مسارات التعلم</a>
+                <li class="drop-down"><a href="{% url 'Courses:category_list'%}">مسارات التعلم</a>
                   <ul>
-                    <li><a href="programming.html">البرمجة</a></li>
-                    <li><a href="design.html">التصميم</a></li>
-                    <li><a href="lang.html">اللغات</a></li>
-                    <li><a href="network.html">شبكات الحاسوب</a></li>
-                    <li><a href="development.html">تطوير الذات</a></li>
-                    <li><a href="system.html">انظمة التشغيل</a></li>
-                    <li><a href="database.html">قواعد بيانات</a></li>
-                    <li><a href="security.html">امن معلومات</a></li>
+                    <li><a href="{% url 'Courses:programming_list'%}">البرمجة</a></li>
+                    <li><a href="{% url 'Courses:design_list'%}">التصميم</a></li>
+                    <li><a href="{% url 'Courses:lang_list'%}">اللغات</a></li>
+                    <li><a href="{% url 'Courses:network_list'%}">شبكات الحاسوب</a></li>
+                    <li><a href="{% url 'Courses:development_list'%}">تطوير الذات</a></li>
+                    <li><a href="{% url 'Courses:system_list'%}">انظمة التشغيل</a></li>
+                    <li><a href="{% url 'Courses:database_list'%}">قواعد بيانات</a></li>
+                    <li><a href="{% url 'Courses:secuirty_list'%}">امن معلومات</a></li>
                   </ul>
                 </li>
                 <li class="drop-down"><a href="{% url 'Books:BookList' %}">الكتب</a>
                   <ul>
-                    <li><a href="programming.html">البرمجة</a></li>
-                    <li><a href="design.html">التصميم</a></li>
-                    <li><a href="lang.html">اللغات</a></li>
-                    <li><a href="network.html">شبكات الحاسوب</a></li>
-                    <li><a href="development.html">تطوير الذات</a></li>
-                    <li><a href="system.html">انظمة التشغيل</a></li>
-                    <li><a href="database.html">قواعد بيانات</a></li>
-                    <li><a href="security.html">امن معلومات</a></li>
+                    <li><a href="{% url 'Books:programming_list'%}">البرمجة</a></li>
+                    <li><a href="{% url 'Books:design_list'%}">التصميم</a></li>
+                    <li><a href="{% url 'Books:lang_list'%}">اللغات</a></li>
+                    <li><a href="{% url 'Books:network_list'%}">شبكات الحاسوب</a></li>
+                    <li><a href="{% url 'Books:development_list'%}">تطوير الذات</a></li>
+                    <li><a href="{% url 'Books:system_list'%}">انظمة التشغيل</a></li>
+                    <li><a href="{% url 'Books:database_list'%}">قواعد بيانات</a></li>
+                    <li><a href="{% url 'Books:secuirty_list'%}">امن معلومات</a></li>
                   </ul>
                 </li>
                 
@@ -83,7 +83,7 @@
 
             
             {% if user.is_authenticated  %}
-            <li id ="get_start1" style="color: white; margin-left:10px; "> <a style="color: white;font-size:12px padding-top" href="#"  class="btn-get-started"> لوحتي التعليمية</a></li>
+            <li id ="get_start1" style="color: white; margin-left:10px; "> <a style="color: white;font-size:12px padding-top" href="{% url 'Auth:my_dashboard'%}"  class="btn-get-started"> لوحتي التعليمية</a></li>
             
 
             <li class="drop-down" ><a>{{request.user.username}}</a>

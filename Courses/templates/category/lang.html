@@ -20,10 +20,10 @@
           <ol class="breadcrumb" style="background-color:#17a2b8;" >
 
             
-            <li class="breadcrumb-item"><a href="index.html" style="color: rgb(255, 255, 255);">الرئيسية</a></li>
-            <li class="breadcrumb-item"><a href="courses.html" style="color: rgb(255, 255, 255);">المسارت التعليمة</a></li>
-            
-            <li class="breadcrumb-item active" aria-current="page" style="color: rgb(0, 0, 0);">االلغات</li>
+            <li class="breadcrumb-item"><a href="{% url 'Auth:Home' %}" style="color: rgb(255, 255, 255);">الرئيسية</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'Courses:category_list' %}" style="color: rgb(255, 255, 255);">التعليم المستمر</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'Courses:category_list' %}" style="color: rgb(255, 255, 255);">مسارات التعلم</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: rgb(0, 0, 0);">اللغات</li>
             
             
           </ol>
@@ -35,14 +35,14 @@
             </button>
             
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="programming.html">البرمجة</a>
-              <a class="dropdown-item" href="design.html">التصميم</a>
-              <a class="dropdown-item" href="lang.html">اللغات</a>
-              <a class="dropdown-item" href="network.html">شبكات الحاسوب</a>
-              <a class="dropdown-item" href="development.html">تطوير الذات</a>
-              <a class="dropdown-item" href="system.html">انظمة التشغيل</a>
-              <a class="dropdown-item" href="database.html">قواعد بيانات</a>
-              <a class="dropdown-item" href="security.html">امن معلومات</a>
+              <a class="dropdown-item" href="{% url 'Courses:programming_list' %}">البرمجة</a>
+              <a class="dropdown-item" href="{% url 'Courses:design_list' %}">التصميم</a>
+              <a class="dropdown-item" href="{% url 'Courses:lang_list' %}">اللغات</a>
+              <a class="dropdown-item" href="{% url 'Courses:network_list' %}">شبكات الحاسوب</a>
+              <a class="dropdown-item" href="{% url 'Courses:development_list' %}">تطوير الذات</a>
+              <a class="dropdown-item" href="{% url 'Courses:system_list' %}">انظمة التشغيل</a>
+              <a class="dropdown-item" href="{% url 'Courses:database_list' %}">قواعد بيانات</a>
+              <a class="dropdown-item" href="{% url 'Courses:secuirty_list' %}">امن معلومات</a>
             </div>
             
           </div>
@@ -60,7 +60,7 @@
 
         <div class="section-title">
           <h2> مسارات التعلم </h2>
-          <p>مسارات التصميم</p>
+          <p>مسارات اللغات</p>
         </div>
         
         <ul class="nav nav-tabs nav_category">
