@@ -16,4 +16,5 @@ urlpatterns=[
   path ('course_details/<int:pk>/detail', views.course_detail, name = 'course_details'),
   path ('course_contante/<int:pk>/contante', views.course_contante, name = 'course_contante'),
   
+  
 ]
