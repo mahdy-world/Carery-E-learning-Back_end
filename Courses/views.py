@@ -48,7 +48,8 @@ def secuirty_list(request):
 
 def course_detail (request,pk):
     course = Course.objects.get(id=pk)
-    return render(request , 'courses/course_details.html',{'da':course})  
+   
+    return render(request , 'courses/course_details.html',{'da':course })  
 
 
 
@@ -56,3 +57,5 @@ def course_contante(request,pk):
     vedio = VedioUrl.objects.filter(course_id=pk).order_by('id')
     course = Course.objects.get(id=pk)
     return render(request , 'courses/course_contante.html',{'dv':vedio , 'co' : course}) 
+
+

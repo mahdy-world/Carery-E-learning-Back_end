@@ -4,3 +4,5 @@ from .models import *
 admin.site.register(Course)
 # admin.site.register(CoursesRegistration)
 admin.site.register(VedioUrl)
+admin.site.register(Sponsers)
+
