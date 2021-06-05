@@ -40,13 +40,7 @@
       <div class="row">
         <div class="col-lg-8">
               <div class="embed-responsive embed-responsive-16by9 wedgit">
-                <iframe width="956" height="538" id="iframe" 
-                {% if video %}
-                src="{{video.url}}" 
-                {% else %}
-                src="{{dv.first.url}}"
-                {% endif %}
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="956" height="538" id="iframe" src="{{dv.first.url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               
               </div>
             </br>
@@ -73,7 +67,7 @@
                       <ul>
                               {% for x in dv  %}
                               <li>
-                                <a style="cursor:pointer" href="{% url 'Courses:video_content' x.id %}">
+                                <a style="cursor:pointer"  onclick="document.getElementById('iframe').src='{{x.url}}'">
                                     <div class="lesson-icon"><i class="fa fa-play-circle"></i></div>
                                     <div class="lesson-title"> {{x.title}}</div>
                                     <div class="lesson-duration">المدة
@@ -117,11 +111,7 @@
           <div class="course-info d-flex justify-content-between align-items-center wedgit" style="background-color:#17a2b8; color:rgb(0, 0, 0)">
             <h6> <i class="fa fa-eye"></i> المشاهدات</h6>
             <p>
-              {% if video %}
-              {{video.shows}}    
-              {% else %}
-              0
-              {% endif %}
+              1,038    
           
         </p>
           </div>

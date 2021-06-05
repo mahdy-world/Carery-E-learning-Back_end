@@ -9,20 +9,19 @@ from Trainer.models import Trainer
 
 
 
-
 # Create your views here.
 
 def home(request):
     books=Book.objects.all()
     trainer=Trainer.objects.all()
     course=Course.objects.all()
-    feedback = Feedback.objects.all()
     
-    return render(request, 'home.html', {'books':books,'trainer':trainer,'co':course , 'fee' : feedback})
+    return render(request, 'home.html', {'books':books,'trainer':trainer,'co':course})
 
 @login_required()
 def student(request):
     student = Student.objects.get(user=request.user)
+    
     return render(request , 'profile.html' , {'student' : student})  
 
 @login_required()
@@ -45,7 +44,6 @@ def edit_student(request):
         studentform = StudentForm(instance=student)
 
     return render(request , 'edit_student.html' ,{'userform' : userform , 'studentform' : studentform})
-
 
 @login_required()
 def my_dashboard(request):
