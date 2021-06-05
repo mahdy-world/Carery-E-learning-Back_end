@@ -70,10 +70,33 @@ class VedioUrl(models.Model):
 
     def __str__(self):
         return self.title
-    
 
+
+
+
+RATE_CHOISES= [
+    (1 , '1 - Tarsh'),
+    (2 , '2 - Horrible'),
+    (3 , '3 - Terrible'),
+    (4 , '4 - Bad'),
+    (5 , '5 - Ok'),
+    (6 , '6 - Watchable'),
+    (7 , '7 - Good'),
+    (8 , '8 - Very Good'),
+    (9 , '9 - Perfect'),
+    (10 ,'10 - Master Piece'),
+                    
+]
+
+class Review (models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    date = models.DateTimeField( auto_now_add=True)
+    rate =models.PositiveSmallIntegerField(choices=RATE_CHOISES)
+    text = models.TextField(max_length=2000)
     
-    
+    def __str__(self):
+        return self.student.user.username
     
         
     
