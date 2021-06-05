@@ -1,6 +1,10 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.http.response import HttpResponseRedirect
+from Courses.forms import RateForm
+from django.shortcuts import redirect, render
 from .models import * 
-
+from .forms import RateForm
+from django.db.models import Avg
 
 # Create your views here.
 def category_list(request):
@@ -56,6 +60,33 @@ def course_detail (request,pk):
 def course_contante(request,pk):
     vedio = VedioUrl.objects.filter(course_id=pk).order_by('id')
     course = Course.objects.get(id=pk)
-    return render(request , 'courses/course_contante.html',{'dv':vedio , 'co' : course}) 
+    reviwes = Review.objects.filter(course=course)
+    reviwes_avg = reviwes.aggregate(Avg('rate'))
+    reviwes_count = reviwes.count()
+   
+    
+    return render(request , 'courses/course_contante.html',{'dv':vedio , 'co' : course,'avg':reviwes_avg,'count':reviwes_count}) 
 
 
+def rate (request,pk):
+    
+    course = Course.objects.get(id=pk)
+    user = Student.objects.get(id=request.user.id)
+    
+    if request.method == 'POST':
+        form = RateForm(request.POST)
+        if form.is_valid():
+            rate = form.save(commit=False)
+            rate.course = course
+            rate.student = user
+            rate.save()
+            
+            messages.success(request, 'تم الارسال بنجاح')
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+            
+    else :
+            
+        form =RateForm()
+    
+    
+    return render (request , 'courses/rate.html', {'co' : course,'form': form})

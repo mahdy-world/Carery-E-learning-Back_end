@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static%}
+{% block body %}
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in" style="background-image: url(/static/img/contact.png);">
+      <div class="container">
+        <h2 style="margin-top: 35px;">{{ co.name}}</h2>
+        
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      
+      <div class="container" data-aos="fade-up">
+        
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+                <img src="{{co.image.url}}" alt="" style = "width: 300px; height:300px" >
+            </div>
+
+          </div>
+          
+          <div class="col-lg-8 mt-5 mt-lg-0">
+            
+
+            <form  method="POST"  >
+              {% csrf_token %}
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1"></label>
+                  
+                      
+                  <div class="col-md-10 form-group">
+                    {{form.rate|as_crispy_field }}
+                  </div>
+                </div>
+                <div class="col-md-10 form-group">
+                  {{form.text|as_crispy_field }}
+                </div>
+                <button type="submit" class="btn btn-primary " style="width: 200px; margin-right:200px;">التقييم <i class="fa fa-star" style="color:#F7CA18; font-size: 15px;" > </i></button>
+                
+              </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main>
+    
+{% endblock body %}
+    
