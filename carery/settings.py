@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'Courses',
     'bootstrap4',
     'crispy_forms',
+    'mathfilters',
     
 ]
 

@@ -13,6 +13,7 @@ urlpatterns=[
   path('system_list/' , views.system_list , name = 'system_list'),
   path('database_list/' , views.database_list , name = 'database_list'),
 
+  path('rate/<int:pk>/' , views.rate , name = 'rate'),  
   path ('course_details/<int:pk>/detail', views.course_detail, name = 'course_details'),
   path ('course_contante/<int:pk>/contante', views.course_contante, name = 'course_contante'),
   path ('course_contante/<int:pk>/register', views.enroll_courses, name = 'course_enroll'),

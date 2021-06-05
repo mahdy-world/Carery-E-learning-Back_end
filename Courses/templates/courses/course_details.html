@@ -29,7 +29,7 @@
             
             <li class="breadcrumb-item"><a href="{% url 'Auth:Home' %}" style="color: rgb(255, 255, 255);">الرئيسية</a></li>
             <li class="breadcrumb-item"><a href="{% url 'Courses:category_list' %}" style="color: rgb(255, 255, 255);">التعليم المستمر</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'Courses:category_list' %}" style="color: rgb(255, 255, 255);">{{da.category}}</a></li>
+            <li class="breadcrumb-item"><a href="{{ request.META.HTTP_REFERER }}" style="color: rgb(255, 255, 255);">{{da.category}}</a></li>
             <li class="breadcrumb-item active" aria-current="page" style="color: rgb(34, 34, 34);">{{da.name}}</li>
             
             
