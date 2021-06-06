@@ -7,7 +7,7 @@ from Trainer.models import Trainer
 # Create your models here.
   
 class Sponsers(models.Model):
-    name = models.CharField(max_length = 150 , verbose_name='الاسم')
+    name = models.CharField(max_length = 150 , verbose_name='الاسم' )
     address = models.CharField(max_length = 150 , verbose_name='العنوان')
     phone = models.CharField(max_length = 150 , verbose_name='رقم الموبيل')
     logo= models.ImageField(upload_to='sponsers/', verbose_name='الشعار')
@@ -16,7 +16,7 @@ class Sponsers(models.Model):
         return self.name
 
 class Course(models.Model):
-    name = models.CharField(max_length=50, verbose_name = 'اسم الكورس' )
+    name = models.CharField(max_length=50, verbose_name = 'اسم الكورس' ) 
     image= models.ImageField(upload_to='courses/', verbose_name='صورة الكورس')
     detail_image= models.ImageField(upload_to='courses/', verbose_name='صورة الوصف')
     price = models.CharField(max_length=10, verbose_name='السعر')
@@ -59,13 +59,14 @@ class CoursesRegistration(models.Model):
     course = models.ForeignKey(Course, related_name="course_register", on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.student.user.first_name
+        return self.student.user.username
 
 
 class VedioUrl(models.Model):
     course = models.ForeignKey(Course,related_name="vedio_courses", on_delete=models.CASCADE , verbose_name = 'الكورس')
     title = models.CharField(max_length=100, verbose_name = 'عنوان الفيديو')
     url = models.CharField(max_length=500,verbose_name = 'رابط الفيديو')
+    shows = models.IntegerField(default=0)
     
 
     def __str__(self):

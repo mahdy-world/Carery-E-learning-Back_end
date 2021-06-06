@@ -15,8 +15,9 @@ def home(request):
     books=Book.objects.all()
     trainer=Trainer.objects.all()
     course=Course.objects.all()
+    feedback = Feedback.objects.all()
     
-    return render(request, 'home.html', {'books':books,'trainer':trainer,'co':course})
+    return render(request, 'home.html', {'books':books,'trainer':trainer,'co':course , 'fee' : feedback})
 
 @login_required()
 def student(request):

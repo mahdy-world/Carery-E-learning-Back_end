@@ -28,7 +28,12 @@ class Student(models.Model):
     def __str__(self):
         return self.user.username
     
+class Feedback(models.Model):
+    student= models.ForeignKey(Student, related_name='student_feedback', on_delete=models.CASCADE) 
+    message = models.TextField( verbose_name = 'محتوي الرسالة')
     
+    def __str__(self):
+        return self.student.username   
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
