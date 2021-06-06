@@ -59,14 +59,13 @@
           
           <ul class="nav nav-tabs nav_category" data-aos="zoom-in">
             <li class="nav-item">
-              <a class="nav-link active" href="#">الاحدث</a>
+              <a class="nav-link "  href="#">الاحدث</a>
             </li>
             
-            <li class="nav-item">
-              <a class="nav-link" href="#">الاعلي تقيماً</a>
+            <li class="nav-item" >
+              <a class="nav-link "  href="{% url 'Books:system_list' %}">الكل</a>
             </li>
-           
-            </li>
+            
  
           </ul>
 
@@ -111,5 +110,6 @@
 
   </main>
   <!-- End #main -->
+
   
 {% endblock body %}
