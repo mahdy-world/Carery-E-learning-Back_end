@@ -8,11 +8,16 @@ from django.db.models import Avg
 
 # Create your views here.
 def category_list(request):
-    return render(request ,'category/category.html')
+    
+    return render(request ,'category/category.html',)
 
 def programming_list(request):
     queryset = Course.objects.filter(category__id = 1)
-    return render(request , 'category/programming.html' ,{'course' : queryset} )
+    
+
+    user_count = CoursesRegistration.objects.filter(course=queryset)
+    
+    return render(request , 'category/programming.html' ,{'course' : queryset,'user_count':user_count } )
 
 
 def design_list(request):
@@ -52,18 +57,27 @@ def secuirty_list(request):
 
 def course_detail (request,pk):
     course = Course.objects.get(id=pk)
+    
     if Student.objects.filter(id=request.user.id):
         user = Student.objects.get(id=request.user.id)
     else:
         user = None
     user_course = CoursesRegistration.objects.filter(student=user, course=course)
     user_count = CoursesRegistration.objects.filter(course=course)
+    
+    
+    
     videos =  VedioUrl.objects.filter(course=course)
+    
+    reviwes = Review.objects.filter(course=course)
+    reviwes_avg = reviwes.aggregate(Avg('rate'))
+    
 
-    return render(request , 'courses/course_details.html',{'da':course, 'user_course':user_course ,'user_count':user_count , 'videos':videos})  
+    return render(request , 'courses/course_details.html',{'da':course, 'user_course':user_course ,'user_count':user_count , 'videos':videos, 'avg':reviwes_avg})  
 
 
 def course_contante(request,pk):
+   
     vedio = VedioUrl.objects.filter(course_id=pk).order_by('id')
     course = Course.objects.get(id=pk)
     reviwes = Review.objects.filter(course=course)
@@ -84,6 +98,11 @@ def video_content(request, id):
 
 
 def enroll_courses(request, pk):
+     
+    course = Course.objects.get(id=pk)
+    course.student_count += 1
+    course.save()  
+        
     vedio = VedioUrl.objects.filter(course_id=pk).order_by('id')
     course = Course.objects.get(id=pk)
 
@@ -118,4 +137,4 @@ def rate (request,pk):
         form =RateForm()
     
     
-    return render (request , 'courses/rate.html', {'co' : course,'form': form})
+    return render (request , 'courses/rate.html' , {'co' : course,'form': form})

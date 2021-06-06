@@ -21,7 +21,6 @@ class Course(models.Model):
     detail_image= models.ImageField(upload_to='courses/', verbose_name='صورة الوصف')
     price = models.CharField(max_length=10, verbose_name='السعر')
     duration = models.CharField( max_length=10 , verbose_name = 'مدة الكورس')
-    count_lesson = models.CharField(max_length=100 , verbose_name='عدد الدروس')
     description = models.TextField(max_length=500)
     category = models.ForeignKey(Category,related_name = "course_category" ,on_delete=models.CASCADE , verbose_name = 'قسم الكورس')
     trainer = models.ForeignKey(Trainer,related_name = "Trainer_name" ,on_delete=models.CASCADE , verbose_name = 'اسم المدرب')
@@ -45,7 +44,7 @@ class Course(models.Model):
     title5 = models.CharField(max_length=50 , verbose_name='العنوان الخامس')
     p5 = models.CharField(max_length=100 , verbose_name='العنوان الفرعي الخامس')
     image5 = models.ImageField(upload_to='summary/', verbose_name='الصورة الخامسة' )
-    
+    student_count = models.IntegerField(default=0 , verbose_name="عدد الطلاب المسجلين ")
     sponsers = models.ForeignKey(Sponsers, related_name="course_sponsers" ,on_delete=models.CASCADE, verbose_name='الرعاة')
      
     
