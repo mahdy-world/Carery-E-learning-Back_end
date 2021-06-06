@@ -23,17 +23,17 @@ class Student(models.Model):
     country = models.ForeignKey(Country, related_name="user_country", on_delete=models.CASCADE , null=True , blank = True , verbose_name = 'البلد')
     gender = models.CharField(max_length=40, choices=GENDER , verbose_name="النوع" )
     phone = models.CharField(max_length=20 , null=True , blank=True ,verbose_name='رقم المحمول')
-    image = models.ImageField( upload_to='profile/', verbose_name = 'الصورة الشخصية', null=True , blank = True )
+    image = models.ImageField( upload_to='profile/',default='/team-1.jpg' ,verbose_name = 'الصورة الشخصية', null=True , blank = True )
 
     def __str__(self):
         return self.user.username
     
 class Feedback(models.Model):
     student= models.ForeignKey(Student, related_name='student_feedback', on_delete=models.CASCADE) 
-    message = models.TextField( verbose_name = 'محتوي الرسالة')
+    message = models.TextField( max_length=150 ,verbose_name = 'محتوي الرسالة')
     
     def __str__(self):
-        return self.student.username   
+        return self.student.user.username  
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
