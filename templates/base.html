@@ -96,7 +96,7 @@
             </li>
             {% else %}
             <li id ="get_start1" style="color: white;"> <a style="color: white;" href="{% url 'accounts:signup'%}?next={{request.path}}"  class="btn-get-started">سجل مجانا</a></li>
-            <li id ="get_start2" ><a href="{% url 'login'%}?next={{request.path}}"  class="btn-get-started">دخول</a>
+            <li id ="get_start2" ><a href="{% url 'accounts:signin'%}?next={{request.path}}"  class="btn-get-started">دخول</a>
              </li>
              {% endif %}
       

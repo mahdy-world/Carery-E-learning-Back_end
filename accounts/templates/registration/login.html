@@ -50,22 +50,34 @@
                             <div class="card-body pt-0"> 
                                 
                                 <div class="p-2">
-                                    <form class="form-horizontal" method="post">
+                                    <form class="form-horizontal" method="POST">
                                         {% csrf_token %}
                                         <div class="form-group">
                                             <h6 dir="rtl">اسم المستخدم</h6> 
                                             <input class="form-control" name="username" required="required">
                                         </div>
+
+                                        
                 
                                         <div class="form-group">
                                             <h6>كلمة المرور</h6>
                                             <input type="password" class="form-control" name="password" required="required" >
                                         </div>
-                
+
+                                        {% if messages %}
+                                        <div class="alert alert-danger" role="alert">
+                                            
+                                            {% for message in messages  %}
+                                                {{message}}
+                                            {% endfor %}
+                                                
+                                        </div>
+                                            {% endif %}
+                                            
                                        
                                         
                                         <div class="mt-3">
-                                            <button class="btn btn-primary btn-block waves-effect waves-light" style="background-color: #00A6AA; border-color:  #00A6AA;"" type="submit">تسجيل الدخول</button>
+                                            <button class="btn btn-primary btn-block waves-effect waves-light" style="background-color: #00A6AA; border-color:  #00A6AA;" type="submit">تسجيل الدخول</button>
                                         </div>
             
                                        
@@ -73,7 +85,7 @@
                                         
 
                                         <div class="mt-4 text-center">
-                                            <a href="auth-recoverpw.html" class="text-muted"><i class="mdi mdi-lock mr-1"></i>هل نسيت كلمة المرور ؟</a>
+                                            <a href="{% url 'password_reset' %}" class="text-muted"><i class="mdi mdi-lock mr-1"></i>هل نسيت كلمة المرور ؟</a>
                                         </div>
                                     </form>
                                     <div class="mt-5 text-center">
