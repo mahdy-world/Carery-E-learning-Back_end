@@ -1,4 +1,4 @@
-from Courses.models import Course
+from Courses.models import Course, CoursesRegistration
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from accounts.models import *
@@ -48,5 +48,9 @@ def edit_student(request):
 
 @login_required()
 def my_dashboard(request):
+    myCuorses = CoursesRegistration.objects.filter(student_id=request.user.id)
+    # all = myCuorses.Course.all()
     
-    return render(request,'mydashboard.html')
+   
+    print(myCuorses)
+    return render(request,'mydashboard.html' , {'myCuorses':myCuorses})

@@ -66,6 +66,7 @@ class VedioUrl(models.Model):
     title = models.CharField(max_length=100, verbose_name = 'عنوان الفيديو')
     url = models.CharField(max_length=500,verbose_name = 'رابط الفيديو')
     shows = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=False)
     
 
     def __str__(self):
@@ -92,8 +93,8 @@ class Review (models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     date = models.DateTimeField( auto_now_add=True)
-    rate =models.PositiveSmallIntegerField(choices=RATE_CHOISES)
-    text = models.TextField(max_length=2000)
+    rate =models.PositiveSmallIntegerField(choices=RATE_CHOISES, verbose_name="التقييم") 
+    text = models.TextField(max_length=2000 ,verbose_name="ملاحظات")
     
     def __str__(self):
         return self.student.user.username
