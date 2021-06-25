@@ -58,14 +58,16 @@
                       <h3><i class="fa fa-bars"></i> المحتويات</h3>
                       <ul>
                               {% for x in dv  %}
+                             
                               <li>
-                                <a style="cursor:pointer" href="{% url 'Courses:video_content' x.id %}">
+                                <a  style="cursor:pointer" href="{% url 'Courses:video_content' x.id %}" >
                                     <div class="lesson-icon"><i class="fa fa-play-circle"></i></div>
                                     <div class="lesson-title"> {{x.title}}</div>
                                     <div class="lesson-duration">المدة
                                         : 00:08:43</div>
                                 </a>
                             </li>
+                          
   
                               {% endfor %}
                           

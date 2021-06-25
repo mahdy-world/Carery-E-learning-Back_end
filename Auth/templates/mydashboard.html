@@ -67,9 +67,6 @@
           </div>
           
           <ul class="nav nav-tabs nav_category" data-aos="zoom-in">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">الكل</a>
-            </li>
             
             <li class="nav-item">
               <a class="nav-link" href="#">الكورسات الحالية</a>
@@ -89,112 +86,34 @@
          
         <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
             
-          <!--course item-->
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="course-item wedgit">
-              <img src="./img/Asset 16.png" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>تطوير الويب</h4>
-                 
-                </div>
-
-                <h3><a href="course_details.html">تصميم مواقع</a></h3></br>
-                
-                <div class="progress">
-                  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-                
-              </div>
-            </div>
-          </div> 
-          <!-- End Course Item-->
+         
 
             <!--course item-->
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="course-item wedgit">
-              <img src="./img/Asset 16.png" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>تطوير الويب</h4>
-                 
-                </div>
+          
+          {% for x in  myCuorses %}
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="course-item wedgit">
+                <img src="{{x.course.image.url}}" class="img-fluid" alt="...">
+                <div class="course-content">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4>{{x.course.category.name}}</h4>
+                  
+                  </div>
 
-                <h3><a href="course_details.html">تصميم مواقع</a></h3></br>
-                
-                <div class="progress">
-                  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                  <h3><a href="course_details.html">{{x.course.name}}</a></h3></br>
+                  
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                  </div>
+                  
                 </div>
-                
               </div>
-            </div>
-          </div> 
-          <!-- End Course Item-->
+            </div> 
+            <!-- End Course Item-->
 
-           <!--course item-->
-           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="course-item wedgit">
-              <img src="./img/Asset 16.png" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>تطوير الويب</h4>
-                 
-                </div>
+          {% endfor %}
+              
 
-                <h3><a href="course_details.html">تصميم مواقع</a></h3></br>
-                
-                <div class="progress">
-                  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-                
-              </div>
-            </div>
-          </div> 
-          <!-- End Course Item-->
-
-            <!--course item-->
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="course-item wedgit">
-              <img src="./img/Asset 16.png" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>تطوير الويب</h4>
-                 
-                </div>
-
-                <h3><a href="course_details.html">تصميم مواقع</a></h3></br>
-                
-                <div class="progress">
-                  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-                
-              </div>
-            </div>
-          </div> 
-          <!-- End Course Item-->
-
-        </div>
-      </br> </br>
-           <!--paginaton-->
-              <div class="row" style="justify-content: center;">
-                <nav aria-label="Page navigation example" >
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
         
       </section>
       <!-- end courses section--> 

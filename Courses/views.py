@@ -90,7 +90,9 @@ def course_contante(request,pk):
 
 def video_content(request, id):
     video = VedioUrl.objects.get(id=id)
+    
     video.shows += 1
+    video.is_active = True
     video.save()
     vedio = VedioUrl.objects.filter(course_id=video.course.id).order_by('id')
     course = Course.objects.get(id=video.course.id)
