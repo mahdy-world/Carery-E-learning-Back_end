@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .forms import *
+from django.http.response import HttpResponseRedirect
 
 
 # Create your views here.
@@ -29,7 +30,8 @@ def signin(request):
         auth = authenticate(username=username, password=password)
         if auth is not None:
             login(request, auth)
-            return redirect('/')
+            next = request.POST.get('next', '/')
+            return HttpResponseRedirect(next)
         else:
             messages.success(request, 'بيانات الدخول خاطئة')
 

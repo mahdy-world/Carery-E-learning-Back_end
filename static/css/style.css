@@ -10,7 +10,7 @@
 body {
   font-family:"Tajawal";
   color: #1f1e1e;
-  background-image: url('//img/webb.png');
+  background-color: #e9ecef
 }
 
 a {
@@ -731,6 +731,9 @@ section {
   
   color: #495057;
   
+}
+.shadow{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .counts .counters p {
@@ -1512,7 +1515,8 @@ margin-top: 10px;
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #1c354f;
+  /* background: #1c354f; */
+  background: #3f3f3f;
 }
 
 #footer .footer-top .footer-contact {

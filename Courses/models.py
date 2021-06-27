@@ -66,7 +66,7 @@ class VedioUrl(models.Model):
     title = models.CharField(max_length=100, verbose_name = 'عنوان الفيديو')
     url = models.CharField(max_length=500,verbose_name = 'رابط الفيديو')
     shows = models.IntegerField(default=0)
-    is_active = models.BooleanField(default=False)
+    # is_active = models.BooleanField(default=False)
     
 
     def __str__(self):
