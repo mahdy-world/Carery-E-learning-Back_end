@@ -9,7 +9,7 @@ from django.db.models import Avg
 # Create your views here.
 def category_list(request):
     
-    return render(request ,'category/category.html',)
+    return render(request ,'category/category.html')
 
 def programming_list(request):
     queryset = Course.objects.filter(category__id = 1)
