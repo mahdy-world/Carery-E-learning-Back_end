@@ -22,15 +22,61 @@
     
     <div class="container aos-init aos-animate" data-aos="fade-up">
       
-        <nav aria-label="breadcrumb">
-        
+      <nav aria-label="breadcrumb">
           
-         
-         
-          
-        </nav>
+        <ol class="breadcrumb" style="background-color:#17a2b8;" >
 
-      </br>
+          
+          <li class="breadcrumb-item"><a href="{% url 'Auth:Home' %}" style="color: rgb(255, 255, 255);">الرئيسية</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'Courses:category_list'%}" style="color: rgb(255, 255, 255);">التعليم المستمر</a></li>
+
+          {% if co.category.name == "البرمجة"  %}
+          <li class="breadcrumb-item"><a href="{% url 'Courses:category_list' %}" style="color: rgb(255, 255, 255);">{{co.category}}</li>
+            {% elif co.category.name == "التصميم" %}
+            <li class="breadcrumb-item"><a href="{% url 'Courses:design_list' %}" style="color: rgb(255, 255, 255);">{{co.category}}</li>
+              
+              {% elif co.category.name == "اللغات" %}
+              <li class="breadcrumb-item"><a href="{% url 'Courses:lang_list' %}" style="color: rgb(255, 255, 255);">{{co.category}}</li>
+                {% elif co.category.name == "شبكات الحاسوب" %}
+                <li class="breadcrumb-item"><a href="{% url 'Courses:network_list' %}" style="color: rgb(255, 255, 255);">{{co.category}}</li>
+                  {% elif co.category.name == "تطوير الذات" %}
+                  <li class="breadcrumb-item"><a href="{% url 'Courses:development_list' %}" style="color: rgb(255, 255, 255);">{{co.category}}</li>
+                    {% elif co.category.name == "انظمة تشغيل" %}
+                    <li class="breadcrumb-item"><a href="{% url 'Courses:system_list' %}" style="color: rgb(255, 255, 255);">{{co.category}}</li>
+                      {% elif co.category.name == "قواعد بيانات" %}
+                      <li class="breadcrumb-item"><a href="{% url 'Courses:database_list' %}" style="color: rgb(255, 255, 255);">{{co.category}}</li>
+                        {% elif co.category.name == "امن معلومات" %}
+                        <li class="breadcrumb-item"><a href="{% url 'Courses:secuirty_list' %}" style="color: rgb(255, 255, 255);">{{co.category}}</li>
+          {% endif %}
+            
+          
+          
+          
+        </ol>
+
+       
+        <div class="btn-group">
+          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" >
+            <li class="fa fa-th-large"></li> التصنيفات
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'Courses:programming_list' %}">البرمجة</a>
+            <a class="dropdown-item" href="{% url 'Courses:design_list' %}">التصميم</a>
+            <a class="dropdown-item" href="{% url 'Courses:lang_list' %}">اللغات</a>
+            <a class="dropdown-item" href="{% url 'Courses:network_list' %}">شبكات الحاسوب</a>
+            <a class="dropdown-item" href="{% url 'Courses:development_list' %}">تطوير الذات</a>
+            <a class="dropdown-item" href="{% url 'Courses:system_list' %}">انظمة التشغيل</a>
+            <a class="dropdown-item" href="{% url 'Courses:database_list' %}">قواعد بيانات</a>
+            <a class="dropdown-item" href="{% url 'Courses:secuirty_list' %}">امن معلومات</a>
+          </div>
+          
+        </div>
+        
+      </nav>
+
+    </br>
+
+      
       
 
       
@@ -39,6 +85,7 @@
       <!--course vedio-->
       <div class="row">
         <div class="col-lg-8">
+          {{dv.title}}
               <div class="embed-responsive embed-responsive-16by9 wedgit">
                 <iframe width="956" height="538" id="iframe" 
                 {% if video %}
@@ -63,8 +110,7 @@
                                 <a  style="cursor:pointer" href="{% url 'Courses:video_content' x.id %}" >
                                     <div class="lesson-icon"><i class="fa fa-play-circle"></i></div>
                                     <div class="lesson-title"> {{x.title}}</div>
-                                    <div class="lesson-duration">المدة
-                                        : 00:08:43</div>
+                                    
                                 </a>
                             </li>
                           
