@@ -1,4 +1,4 @@
-from Courses.models import Course, CoursesRegistration
+from Courses.models import Course, CoursesRegistration, VedioUrl
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from accounts.models import *
@@ -12,12 +12,14 @@ from Trainer.models import Trainer
 # Create your views here.
 
 def home(request):
-    books=Book.objects.all()
-    trainer=Trainer.objects.all()
-    course=Course.objects.all()
+    books=Book.objects.all().order_by('-created_in')[0:4]
+    trainer=Trainer.objects.all()[0:4]
+    course=Course.objects.all().order_by('-created_in')[0:4]
+    student=Student.objects.all()
+    vedio=VedioUrl.objects.all()
     feedback = Feedback.objects.all()
     
-    return render(request, 'home.html', {'books':books,'trainer':trainer,'co':course , 'fee' : feedback})
+    return render(request, 'home.html', {'books':books,'trainer':trainer,'co':course , 'fee' : feedback, 'student':student, 'vedio':vedio})
 
 @login_required()
 def student(request):

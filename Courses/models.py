@@ -46,6 +46,7 @@ class Course(models.Model):
     image5 = models.ImageField(upload_to='summary/', verbose_name='الصورة الخامسة' )
     student_count = models.IntegerField(default=0 , verbose_name="عدد الطلاب المسجلين ")
     sponsers = models.ForeignKey(Sponsers, related_name="course_sponsers" ,on_delete=models.CASCADE, verbose_name='الرعاة')
+    created_in = models.DateTimeField(auto_now=False, auto_now_add=True)
      
     
     def __str__(self):
