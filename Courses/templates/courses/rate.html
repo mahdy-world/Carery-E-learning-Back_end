@@ -45,7 +45,11 @@
                 <div class="col-md-10 form-group">
                   {{form.text|as_crispy_field }}
                 </div>
-                <button type="submit" class="btn btn-primary " style="width: 200px; margin-right:200px;">التقييم <i class="fa fa-star" style="color:#F7CA18; font-size: 15px;" > </i></button>
+                <div class="mt-3">
+                  <input type="hidden" name="next" value="{{ request.GET.next }}">
+                  <button type="submit" class="btn btn-primary " style="width: 200px; margin-right:200px;">التقييم <i class="fa fa-star" style="color:#F7CA18; font-size: 15px;" > </i></button>
+              </div>
+                
                 
               </form>
 
