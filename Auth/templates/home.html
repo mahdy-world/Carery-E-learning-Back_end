@@ -84,7 +84,7 @@
             </div>
   
             <div class="col-lg-3 col-6 text-center">
-              <span data-to ggle="counter-up">50000</span>
+              <span data-to ggle="counter-up">{{count.duration__sum}}</span>
               <i class="fas fa-stopwatch fa-3x"></i>
               <p>عدد الساعات</p>
             </div>
@@ -230,9 +230,9 @@
            
          
           </div>
-     
+        </br>
           <div class="row" style="justify-content: center;">
-            <a class=" btn btn-outline-info" href="#" >عرض الكل</a>
+            <a class=" btn btn-outline-info" href="{%url 'Courses:category_list'%}" >عرض الكل</a>
           </div>
         </div>
       
@@ -305,7 +305,7 @@
     </br>
         
     <div class="row" style="justify-content: center;">
-      <a class=" btn btn-outline-info" href="#" >عرض الكل</a>
+      <a class=" btn btn-outline-info" href="{%url 'Books:BookList'%}" >عرض الكل</a>
     </div>
   </div>
            

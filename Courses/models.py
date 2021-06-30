@@ -20,7 +20,7 @@ class Course(models.Model):
     image= models.ImageField(upload_to='courses/', verbose_name='صورة الكورس')
     detail_image= models.ImageField(upload_to='courses/', verbose_name='صورة الوصف')
     price = models.CharField(max_length=10, verbose_name='السعر')
-    duration = models.CharField( max_length=10 , verbose_name = 'مدة الكورس')
+    duration = models.IntegerField(  verbose_name = 'مدة الكورس')
     description = models.TextField(max_length=500)
     category = models.ForeignKey(Category,related_name = "course_category" ,on_delete=models.CASCADE , verbose_name = 'قسم الكورس')
     trainer = models.ForeignKey(Trainer,related_name = "Trainer_name" ,on_delete=models.CASCADE , verbose_name = 'اسم المدرب')

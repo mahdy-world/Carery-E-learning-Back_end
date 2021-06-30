@@ -4,22 +4,30 @@ from django.contrib.auth.decorators import login_required
 from accounts.models import *
 from accounts.forms import *
 from django.urls import reverse
-from Book.models import Book
+from Book.models import  Book
 from Trainer.models import Trainer
+
+from django.db.models import Sum
 
 
 
 # Create your views here.
 
 def home(request):
+    all_courses=Course.objects.all()
+    
+    # To count Hours For All Courses 
+    cou = Course.objects.aggregate(Sum('duration'))
+   
     books=Book.objects.all().order_by('-created_in')[0:4]
     trainer=Trainer.objects.all()[0:4]
-    course=Course.objects.all().order_by('-created_in')[0:4]
+    course=all_courses.order_by('-created_in')[0:4]
     student=Student.objects.all()
     vedio=VedioUrl.objects.all()
     feedback = Feedback.objects.all()
     
-    return render(request, 'home.html', {'books':books,'trainer':trainer,'co':course , 'fee' : feedback, 'student':student, 'vedio':vedio})
+    
+    return render(request, 'home.html', {'books':books,'trainer':trainer,'co':course , 'fee' : feedback, 'student':student, 'vedio':vedio ,'count':cou })
 
 @login_required()
 def student(request):
@@ -51,8 +59,6 @@ def edit_student(request):
 @login_required()
 def my_dashboard(request):
     myCuorses = CoursesRegistration.objects.filter(student_id=request.user.id)
-    # all = myCuorses.Course.all()
-    
    
-    print(myCuorses)
+
     return render(request,'mydashboard.html' , {'myCuorses':myCuorses})
