@@ -14,6 +14,7 @@ from PyPDF2 import PdfFileReader
 def book_list(request):
     
     all_books= Book.objects.all()
+   
     paginator = Paginator(all_books, 8)  # Show 6 contacts per page.
     page_number = request.GET.get('page')
     all_books = paginator.get_page(page_number)
@@ -26,6 +27,8 @@ def book_details (request,pk):
         pdf = PdfFileReader(filehandle)
         pages = pdf.getNumPages()
     return render(request , 'book/book_details.html',{'details':book, 'pages':pages})
+
+
 
 # # Download Pdf
 # def download (path):
