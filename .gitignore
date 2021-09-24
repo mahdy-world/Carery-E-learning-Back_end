@@ -4,6 +4,8 @@ __pycache__/
 .idea/
 *.sqlite3
 uploads/
+media/
 .DS_Store
+Front_End/
 
 __pycache__/
