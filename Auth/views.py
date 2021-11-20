@@ -62,3 +62,6 @@ def my_dashboard(request):
    
 
     return render(request,'mydashboard.html' , {'myCuorses':myCuorses})
+
+def page404(request):
+    return render(request , 'notFound.html')

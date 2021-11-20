@@ -95,7 +95,8 @@
  
         <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
             
-          <!--book item-->
+        {% if all %}
+            <!--book item-->
           {% for alls in all %}
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="course-item wedgit">
@@ -121,6 +122,19 @@
           </div> 
           {%endfor%}
           <!-- End book Item-->
+
+        {% else %}
+
+          <div class="col-lg-12" style="display:flex;justify-content: center;
+          align-items: center;">
+
+            <img src="/static/img/no data yet.png" width="800px" height="440px ">
+
+          </div>
+
+        {% endif %}
+            
+         
 
         </div>
       </br> </br>     

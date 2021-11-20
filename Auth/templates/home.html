@@ -30,7 +30,7 @@
     </section>
     <!--end discraption-->
 
-    <main id="main"">
+    <main id="main">
       <!-- <section id="about" class="about" data-aos="zoom-in">
         <div class="container aos-init aos-animate" data-aos="fade-up">
   
@@ -84,7 +84,17 @@
             </div>
   
             <div class="col-lg-3 col-6 text-center">
-              <span data-to ggle="counter-up">{{count.duration__sum}}</span>
+              <span data-to ggle="counter-up">
+                
+                {% if count.duration__sum %}
+                {{count.duration__sum}}
+
+                {% else %}
+
+                  0
+                {% endif %}
+                  
+              </span>
               <i class="fas fa-stopwatch fa-3x"></i>
               <p>عدد الساعات</p>
             </div>

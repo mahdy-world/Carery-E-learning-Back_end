@@ -1,11 +1,6 @@
 db.sqlite3
-__pycache__/
- *.pyc
+*.pyc
 .idea/
 *.sqlite3
 uploads/
-media/
 .DS_Store
-Front_End/
-
-__pycache__/
