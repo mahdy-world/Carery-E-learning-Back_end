@@ -6,6 +6,7 @@ from django.http.response import HttpResponseRedirect
 
 
 # Create your views here.
+# SignUp Function, Check username and password
 def signup(request):
     if request.method=="POST":
         form = SignupForm(request.POST)
